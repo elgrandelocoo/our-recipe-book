@@ -6,21 +6,21 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width,
-      initial-scale=1.0,
-      maximum-scale=1.0,
-      user-scalable=no,
-      viewport-fit=cover">
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no,
+viewport-fit=cover">
 
 <meta name="theme-color" content="#fff8f2">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <meta name="apple-mobile-web-app-status-bar-style"
-      content="default">
+content="default">
 
 <meta name="apple-mobile-web-app-title"
-      content="Our Recipe Book">
+content="Our Recipe Book">
 
 <title>Our Recipe Book</title>
 
@@ -40,17 +40,15 @@ html {
 }
 
 body {
-
     margin: 0;
-
     min-height: 100dvh;
 
     background:
         linear-gradient(
             145deg,
-            #fffaf6 0%,
-            #fff3f0 45%,
-            #f4f7ff 100%
+            #fffaf7 0%,
+            #fff3f0 48%,
+            #f3f7ff 100%
         );
 
     color: #514b4b;
@@ -69,25 +67,18 @@ body {
 ===================================================== */
 
 .app {
-
     min-height: 100dvh;
 
     padding:
         calc(env(safe-area-inset-top) + 24px)
         18px
         calc(env(safe-area-inset-bottom) + 30px);
-
 }
 
-
 .container {
-
     width: 100%;
-
     max-width: 900px;
-
     margin: auto;
-
 }
 
 
@@ -96,37 +87,27 @@ body {
 ===================================================== */
 
 .header {
-
     text-align: center;
-
     margin-bottom: 22px;
-
 }
 
 .header-icon {
-
     font-size: 42px;
-
     margin-bottom: 8px;
-
 }
 
 .title {
-
     margin: 0;
 
     font-size: 32px;
-
     font-weight: 750;
 
     letter-spacing: -0.6px;
 
     color: #554c50;
-
 }
 
 .subtitle {
-
     margin-top: 6px;
 
     font-size: 12px;
@@ -134,7 +115,6 @@ body {
     color: #a59a9e;
 
     letter-spacing: 1px;
-
 }
 
 
@@ -143,27 +123,21 @@ body {
 ===================================================== */
 
 .login-screen {
-
     min-height: 85dvh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
 }
 
 .login-card {
-
     width: 100%;
-
     max-width: 400px;
 
     padding: 28px;
 
     background:
-        rgba(255,255,255,0.78);
+        rgba(255,255,255,0.82);
 
     border:
         1px solid
@@ -175,25 +149,19 @@ body {
         0 15px 45px
         rgba(120,90,90,0.10);
 
-    backdrop-filter:
-        blur(15px);
-
+    backdrop-filter: blur(15px);
 }
 
 .login-title {
-
     text-align: center;
 
     font-size: 23px;
-
     font-weight: 700;
 
     margin-bottom: 20px;
-
 }
 
 .input {
-
     width: 100%;
 
     padding: 15px;
@@ -210,24 +178,16 @@ body {
 
     outline: none;
 
-    font:
-        16px
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+    font-size: 16px;
 
     color: #554c50;
-
 }
 
 .input:focus {
-
     border-color: #d3aebb;
-
 }
 
 .primary-button {
-
     width: 100%;
 
     padding: 15px;
@@ -241,15 +201,10 @@ body {
     color: #58474e;
 
     font-size: 16px;
-
     font-weight: 700;
-
-    cursor: pointer;
-
 }
 
 .error {
-
     margin-top: 12px;
 
     text-align: center;
@@ -257,7 +212,6 @@ body {
     color: #c47f86;
 
     font-size: 13px;
-
 }
 
 
@@ -266,7 +220,6 @@ body {
 ===================================================== */
 
 .topbar {
-
     display: flex;
 
     align-items: center;
@@ -274,13 +227,10 @@ body {
     gap: 10px;
 
     margin-bottom: 15px;
-
 }
 
 .search {
-
     flex: 1;
-
     min-width: 0;
 
     padding: 14px 16px;
@@ -297,11 +247,9 @@ body {
     outline: none;
 
     font-size: 15px;
-
 }
 
 .sort {
-
     padding: 14px 10px;
 
     border:
@@ -316,16 +264,14 @@ body {
     color: #665d61;
 
     font-size: 13px;
-
 }
 
 
 /* =====================================================
-   CATEGORY FILTER
+   FILTERS
 ===================================================== */
 
 .filters {
-
     display: flex;
 
     gap: 7px;
@@ -337,17 +283,13 @@ body {
     margin-bottom: 18px;
 
     scrollbar-width: none;
-
 }
 
 .filters::-webkit-scrollbar {
-
     display: none;
-
 }
 
 .filter {
-
     flex-shrink: 0;
 
     padding:
@@ -366,19 +308,14 @@ body {
     color: #9b9095;
 
     font-size: 12px;
-
-    cursor: pointer;
-
 }
 
 .filter.active {
-
     background: #ead7ee;
 
     color: #63536a;
 
     border-color: #d7c2dc;
-
 }
 
 
@@ -387,14 +324,12 @@ body {
 ===================================================== */
 
 .recipe-grid {
-
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
     gap: 12px;
-
 }
 
 
@@ -403,7 +338,6 @@ body {
 ===================================================== */
 
 .recipe-card {
-
     overflow: hidden;
 
     border-radius: 22px;
@@ -423,18 +357,13 @@ body {
 
     transition:
         transform 0.15s ease;
-
 }
 
 .recipe-card:active {
-
-    transform:
-        scale(0.97);
-
+    transform: scale(0.97);
 }
 
 .recipe-image {
-
     width: 100%;
 
     aspect-ratio: 1.25;
@@ -442,18 +371,9 @@ body {
     object-fit: cover;
 
     display: block;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5e5e5,
-            #e8edf8
-        );
-
 }
 
 .no-image {
-
     width: 100%;
 
     aspect-ratio: 1.25;
@@ -461,7 +381,6 @@ body {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     font-size: 38px;
@@ -472,17 +391,13 @@ body {
             #f7e8eb,
             #e8eff9
         );
-
 }
 
 .recipe-info {
-
     padding: 13px;
-
 }
 
 .recipe-title {
-
     font-size: 16px;
 
     font-weight: 700;
@@ -494,27 +409,22 @@ body {
     overflow: hidden;
 
     text-overflow: ellipsis;
-
 }
 
 .recipe-category {
-
     margin-top: 4px;
 
     font-size: 10px;
 
     color: #a39a9e;
-
 }
 
 .rating {
-
     margin-top: 7px;
 
     font-size: 13px;
 
     color: #d49a58;
-
 }
 
 
@@ -523,7 +433,6 @@ body {
 ===================================================== */
 
 .floating-add {
-
     position: fixed;
 
     right: 22px;
@@ -535,7 +444,6 @@ body {
         );
 
     width: 60px;
-
     height: 60px;
 
     border: none;
@@ -551,9 +459,6 @@ body {
     box-shadow:
         0 10px 30px
         rgba(120,90,100,0.20);
-
-    cursor: pointer;
-
 }
 
 
@@ -562,7 +467,6 @@ body {
 ===================================================== */
 
 .modal {
-
     display: none;
 
     position: fixed;
@@ -572,37 +476,38 @@ body {
     z-index: 100;
 
     background:
-        rgba(50,40,45,0.35);
+        rgba(50,40,45,0.40);
 
     backdrop-filter:
-        blur(7px);
+        blur(8px);
 
     padding:
-        calc(env(safe-area-inset-top) + 15px)
-        15px
-        calc(env(safe-area-inset-bottom) + 15px);
+        calc(env(safe-area-inset-top) + 12px)
+        12px
+        calc(env(safe-area-inset-bottom) + 12px);
 
     overflow-y: auto;
-
 }
 
 .modal.visible {
-
     display: flex;
 
     align-items: flex-start;
 
     justify-content: center;
-
 }
 
-.modal-card {
 
+/* =====================================================
+   EDIT MODAL
+===================================================== */
+
+.modal-card {
     width: 100%;
 
     max-width: 700px;
 
-    margin-top: 10px;
+    margin-top: 5px;
 
     background: #fffaf8;
 
@@ -613,11 +518,9 @@ body {
     box-shadow:
         0 20px 60px
         rgba(70,50,55,0.22);
-
 }
 
 .modal-header {
-
     display: flex;
 
     align-items: center;
@@ -625,21 +528,16 @@ body {
     justify-content: space-between;
 
     margin-bottom: 18px;
-
 }
 
 .modal-title {
-
     font-size: 24px;
 
     font-weight: 750;
-
 }
 
 .close {
-
     width: 38px;
-
     height: 38px;
 
     border: none;
@@ -651,7 +549,6 @@ body {
     color: #70666a;
 
     font-size: 20px;
-
 }
 
 
@@ -660,7 +557,6 @@ body {
 ===================================================== */
 
 .label {
-
     display: block;
 
     margin:
@@ -677,11 +573,9 @@ body {
     text-transform: uppercase;
 
     letter-spacing: 1px;
-
 }
 
 .textarea {
-
     width: 100%;
 
     min-height: 100px;
@@ -700,18 +594,12 @@ body {
 
     outline: none;
 
-    font:
-        15px
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+    font-size: 15px;
 
     color: #554d51;
-
 }
 
 .select {
-
     width: 100%;
 
     padding: 13px;
@@ -727,18 +615,15 @@ body {
     color: #554d51;
 
     font-size: 15px;
-
 }
 
 .form-row {
-
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
     gap: 10px;
-
 }
 
 
@@ -747,7 +632,6 @@ body {
 ===================================================== */
 
 .photo-preview {
-
     display: flex;
 
     gap: 8px;
@@ -758,13 +642,10 @@ body {
         5px
         0
         10px;
-
 }
 
 .photo-thumb {
-
     width: 90px;
-
     height: 90px;
 
     flex-shrink: 0;
@@ -772,11 +653,9 @@ body {
     object-fit: cover;
 
     border-radius: 13px;
-
 }
 
 .photo-input {
-
     width: 100%;
 
     padding: 12px;
@@ -788,16 +667,14 @@ body {
     border-radius: 15px;
 
     background: #fff;
-
 }
 
 
 /* =====================================================
-   SAVE BUTTON
+   SAVE / DELETE
 ===================================================== */
 
 .save-button {
-
     width: 100%;
 
     margin-top: 20px;
@@ -815,11 +692,9 @@ body {
     font-size: 16px;
 
     font-weight: 750;
-
 }
 
 .delete-button {
-
     width: 100%;
 
     margin-top: 8px;
@@ -835,99 +710,373 @@ body {
     color: #925c65;
 
     font-size: 14px;
-
 }
 
 
 /* =====================================================
-   DETAIL VIEW
+   RECIPE DETAIL
 ===================================================== */
 
-.detail-photo {
+.detail-card {
+    width: 100%;
+
+    max-width: 720px;
+
+    margin-top: 5px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #fffaf8;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(70,50,55,0.25);
+}
+
+
+/* =====================================================
+   DETAIL HERO
+===================================================== */
+
+.detail-hero {
+    position: relative;
 
     width: 100%;
 
-    max-height: 380px;
+    background: #eee4e4;
+}
+
+.detail-main-photo {
+    display: block;
+
+    width: 100%;
+
+    max-height: 390px;
 
     object-fit: cover;
+}
 
-    border-radius: 20px;
+.detail-no-photo {
+    height: 180px;
 
-    margin-bottom: 14px;
+    display: flex;
 
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7e5e8,
+            #e9eef8
+        );
+}
+
+
+/* =====================================================
+   DETAIL CONTENT
+===================================================== */
+
+.detail-body {
+    padding: 24px;
+}
+
+.detail-top {
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid
+        #eadfe1;
 }
 
 .detail-title {
+    margin: 0;
 
-    font-size: 29px;
+    font-size: 30px;
 
-    font-weight: 750;
+    line-height: 1.15;
 
-    color: #554d51;
+    font-weight: 800;
 
+    color: #4f474b;
+
+    letter-spacing: -0.5px;
 }
 
-.detail-rating {
+.detail-meta {
+    display: flex;
 
-    margin:
-        8px
-        0
-        15px;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.detail-stars {
+    font-size: 17px;
 
     color: #d49a58;
 
-    font-size: 17px;
-
+    letter-spacing: 1px;
 }
 
-.detail-section {
-
-    margin-top: 20px;
-
-}
-
-.detail-section h3 {
-
-    margin: 0 0 8px;
-
+.detail-rating-number {
     font-size: 13px;
 
-    text-transform: uppercase;
+    color: #8f8589;
 
-    letter-spacing: 1px;
-
-    color: #9a8f94;
-
+    font-weight: 600;
 }
 
-.detail-text {
+.detail-category-pill {
+    padding:
+        6px
+        10px;
 
-    white-space: pre-wrap;
+    border-radius: 12px;
 
-    line-height: 1.55;
+    background: #f0e1eb;
+
+    color: #77616b;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+/* =====================================================
+   DETAIL SECTION
+===================================================== */
+
+.detail-section {
+    margin-top: 22px;
+}
+
+.detail-section-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 11px;
+
+    color: #81757a;
+}
+
+.detail-section-icon {
+    font-size: 17px;
+}
+
+.detail-section-title {
+    font-size: 12px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   INGREDIENTS
+===================================================== */
+
+.ingredients-box {
+    padding:
+        14px
+        16px;
+
+    border-radius: 17px;
+
+    background:
+        #f8f1ec;
+
+    border:
+        1px solid
+        #f0e5df;
+}
+
+.ingredient-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding:
+        7px
+        0;
 
     font-size: 15px;
 
-    color: #5e565a;
+    line-height: 1.35;
 
+    color: #5d5558;
 }
 
-.detail-actions {
+.ingredient-dot {
+    flex-shrink: 0;
 
+    width: 7px;
+    height: 7px;
+
+    margin-top: 6px;
+
+    border-radius: 50%;
+
+    background: #d6a8a8;
+}
+
+
+/* =====================================================
+   INSTRUCTIONS
+===================================================== */
+
+.instruction-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.instruction-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.instruction-number {
+    flex-shrink: 0;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ead9e9;
+
+    color: #735d73;
+
+    font-size: 12px;
+
+    font-weight: 750;
+}
+
+.instruction-text {
+    padding-top: 4px;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+
+    color: #5d5558;
+}
+
+
+/* =====================================================
+   NOTES
+===================================================== */
+
+.notes-box {
+    padding:
+        15px
+        16px;
+
+    border-radius: 17px;
+
+    background:
+        #fff0f1;
+
+    border:
+        1px solid
+        #f5dddd;
+
+    white-space: pre-wrap;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #665b5f;
+}
+
+
+/* =====================================================
+   DETAIL PHOTOS
+===================================================== */
+
+.detail-photo-strip {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-top: 10px;
+
+    scrollbar-width: none;
+}
+
+.detail-photo-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.detail-small-photo {
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+/* =====================================================
+   DETAIL ACTIONS
+===================================================== */
+
+.detail-actions {
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 8px;
+    gap: 9px;
 
-    margin-top: 22px;
+    margin-top: 25px;
 
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        #eadfe1;
 }
 
 .secondary-button {
-
-    padding: 13px;
+    padding: 14px;
 
     border: none;
 
@@ -939,44 +1088,34 @@ body {
 
     font-weight: 650;
 
+    font-size: 14px;
 }
 
 
 /* =====================================================
-   EMPTY
+   EMPTY / LOADING
 ===================================================== */
 
 .empty {
-
     text-align: center;
 
     padding: 65px 20px;
 
     color: #a79ca0;
-
 }
 
 .empty-icon {
-
     font-size: 48px;
 
     margin-bottom: 12px;
-
 }
 
-
-/* =====================================================
-   LOADING
-===================================================== */
-
 .loading {
-
     text-align: center;
 
     padding: 50px;
 
     color: #a79ca0;
-
 }
 
 
@@ -987,10 +1126,8 @@ body {
 @media (min-width: 700px) {
 
     .recipe-grid {
-
         grid-template-columns:
             repeat(3, 1fr);
-
     }
 
 }
@@ -1003,18 +1140,22 @@ body {
 @media (max-width: 390px) {
 
     .recipe-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
 
         gap: 8px;
-
     }
 
     .recipe-title {
-
         font-size: 14px;
+    }
 
+    .detail-body {
+        padding: 20px;
+    }
+
+    .detail-title {
+        font-size: 27px;
     }
 
 }
@@ -1032,13 +1173,13 @@ body {
 ===================================================== -->
 
 <div
-    id="loginScreen"
-    class="login-screen">
+id="loginScreen"
+class="login-screen">
 
     <div class="login-card">
 
         <div
-            class="header-icon">
+        class="header-icon">
             🍝
         </div>
 
@@ -1047,30 +1188,30 @@ body {
         </div>
 
         <input
-            id="email"
-            class="input"
-            type="email"
-            placeholder="Email"
-            autocomplete="email">
+        id="email"
+        class="input"
+        type="email"
+        placeholder="Email"
+        autocomplete="email">
 
         <input
-            id="password"
-            class="input"
-            type="password"
-            placeholder="Password"
-            autocomplete="current-password">
+        id="password"
+        class="input"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password">
 
         <button
-            class="primary-button"
-            onclick="login()">
+        class="primary-button"
+        onclick="login()">
 
             Log in
 
         </button>
 
         <div
-            id="loginError"
-            class="error">
+        id="loginError"
+        class="error">
         </div>
 
     </div>
@@ -1084,15 +1225,13 @@ body {
 ===================================================== -->
 
 <div
-    id="mainApp"
-    style="display:none;">
+id="mainApp"
+style="display:none;">
 
 <div class="app">
 
 <div class="container">
 
-
-<!-- HEADER -->
 
 <div class="header">
 
@@ -1111,20 +1250,18 @@ body {
 </div>
 
 
-<!-- SEARCH / SORT -->
-
 <div class="topbar">
 
     <input
-        id="search"
-        class="search"
-        placeholder="🔍 Search recipes..."
-        oninput="renderRecipes()">
+    id="search"
+    class="search"
+    placeholder="🔍 Search recipes..."
+    oninput="renderRecipes()">
 
     <select
-        id="sort"
-        class="sort"
-        onchange="renderRecipes()">
+    id="sort"
+    class="sort"
+    onchange="renderRecipes()">
 
         <option value="rating">
             ⭐ Rating
@@ -1151,19 +1288,15 @@ body {
 </div>
 
 
-<!-- FILTERS -->
-
 <div
-    id="filters"
-    class="filters">
+id="filters"
+class="filters">
 </div>
 
 
-<!-- RECIPES -->
-
 <div
-    id="recipeGrid"
-    class="recipe-grid">
+id="recipeGrid"
+class="recipe-grid">
 
     <div class="loading">
         Loading recipes...
@@ -1178,8 +1311,8 @@ body {
 
 
 <button
-    class="floating-add"
-    onclick="openNewRecipe()">
+class="floating-add"
+onclick="openNewRecipe()">
 
     +
 
@@ -1190,28 +1323,28 @@ body {
 
 
 <!-- =====================================================
-     RECIPE EDIT MODAL
+     EDIT RECIPE MODAL
 ===================================================== -->
 
 <div
-    id="editModal"
-    class="modal">
+id="editModal"
+class="modal">
 
 <div class="modal-card">
 
 <div class="modal-header">
 
     <div
-        id="editModalTitle"
-        class="modal-title">
+    id="editModalTitle"
+    class="modal-title">
 
         New Recipe
 
     </div>
 
     <button
-        class="close"
-        onclick="closeEditModal()">
+    class="close"
+    onclick="closeEditModal()">
 
         ×
 
@@ -1221,9 +1354,9 @@ body {
 
 
 <input
-    id="recipeTitle"
-    class="input"
-    placeholder="Recipe name">
+id="recipeTitle"
+class="input"
+placeholder="Recipe name">
 
 
 <div class="form-row">
@@ -1235,8 +1368,8 @@ Category
 </label>
 
 <select
-    id="recipeCategory"
-    class="select">
+id="recipeCategory"
+class="select">
 
     <option>🍝 Pasta</option>
     <option>🥩 Meat</option>
@@ -1257,8 +1390,8 @@ Rating
 </label>
 
 <select
-    id="recipeRating"
-    class="select">
+id="recipeRating"
+class="select">
 
     <option value="">
         No rating
@@ -1296,9 +1429,9 @@ Ingredients
 </label>
 
 <textarea
-    id="recipeIngredients"
-    class="textarea"
-    placeholder="Write the ingredients here..."></textarea>
+id="recipeIngredients"
+class="textarea"
+placeholder="One ingredient per line..."></textarea>
 
 
 <label class="label">
@@ -1306,9 +1439,9 @@ Instructions
 </label>
 
 <textarea
-    id="recipeInstructions"
-    class="textarea"
-    placeholder="How do you make it?"></textarea>
+id="recipeInstructions"
+class="textarea"
+placeholder="One step per line..."></textarea>
 
 
 <label class="label">
@@ -1316,9 +1449,9 @@ Our Notes
 </label>
 
 <textarea
-    id="recipeNotes"
-    class="textarea"
-    placeholder="What did we think? What should we change next time?"></textarea>
+id="recipeNotes"
+class="textarea"
+placeholder="What did we think? What should we change next time?"></textarea>
 
 
 <label class="label">
@@ -1326,22 +1459,22 @@ Food Photos
 </label>
 
 <input
-    id="photoInput"
-    class="photo-input"
-    type="file"
-    accept="image/*"
-    multiple>
+id="photoInput"
+class="photo-input"
+type="file"
+accept="image/*"
+multiple>
 
 
 <div
-    id="existingPhotos"
-    class="photo-preview">
+id="existingPhotos"
+class="photo-preview">
 </div>
 
 
 <button
-    class="save-button"
-    onclick="saveRecipe()">
+class="save-button"
+onclick="saveRecipe()">
 
     Save Recipe
 
@@ -1349,10 +1482,10 @@ Food Photos
 
 
 <button
-    id="deleteRecipeButton"
-    class="delete-button"
-    onclick="deleteCurrentRecipe()"
-    style="display:none;">
+id="deleteRecipeButton"
+class="delete-button"
+onclick="deleteCurrentRecipe()"
+style="display:none;">
 
     Delete Recipe
 
@@ -1370,32 +1503,14 @@ Food Photos
 ===================================================== -->
 
 <div
-    id="detailModal"
-    class="modal">
+id="detailModal"
+class="modal">
 
-<div class="modal-card">
+<div class="detail-card">
 
-<div class="modal-header">
-
-    <div class="modal-title">
-        Recipe
-    </div>
-
-    <button
-        class="close"
-        onclick="closeDetailModal()">
-
-        ×
-
-    </button>
-
-</div>
-
-
-<div
+    <div
     id="detailContent">
-</div>
-
+    </div>
 
 </div>
 
@@ -1408,7 +1523,6 @@ Food Photos
 
 <script>
 
-
 /* =====================================================
    SUPABASE
 ===================================================== */
@@ -1416,10 +1530,8 @@ Food Photos
 const SUPABASE_URL =
     "https://geshdseudikxkzukdxpm.supabase.co";
 
-
 const SUPABASE_KEY =
     "sb_publishable_athr8mE5QfYz1pzJRZsf1w_zkEJOfwN";
-
 
 const supabaseClient =
     window.supabase.createClient(
@@ -1429,7 +1541,7 @@ const supabaseClient =
 
 
 /* =====================================================
-   APP STATE
+   STATE
 ===================================================== */
 
 let currentUser = null;
@@ -1450,21 +1562,16 @@ let editingRecipeId = null;
 async function login() {
 
     const email =
-        document.getElementById(
-            "email"
-        ).value.trim();
+        document.getElementById("email")
+        .value
+        .trim();
 
     const password =
-        document.getElementById(
-            "password"
-        ).value;
-
+        document.getElementById("password")
+        .value;
 
     const error =
-        document.getElementById(
-            "loginError"
-        );
-
+        document.getElementById("loginError");
 
     error.textContent = "";
 
@@ -1475,7 +1582,6 @@ async function login() {
             "Please enter your email and password.";
 
         return;
-
     }
 
 
@@ -1483,11 +1589,10 @@ async function login() {
         data,
         error: loginError
     } =
-        await supabaseClient.auth.signInWithPassword({
-
+        await supabaseClient.auth
+        .signInWithPassword({
             email,
             password
-
         });
 
 
@@ -1497,21 +1602,18 @@ async function login() {
             loginError.message;
 
         return;
-
     }
 
 
     currentUser =
         data.user;
 
-
     await startApp();
-
 }
 
 
 /* =====================================================
-   CHECK EXISTING SESSION
+   SESSION
 ===================================================== */
 
 async function checkSession() {
@@ -1519,7 +1621,8 @@ async function checkSession() {
     const {
         data
     } =
-        await supabaseClient.auth.getSession();
+        await supabaseClient.auth
+        .getSession();
 
 
     if (data.session) {
@@ -1528,28 +1631,23 @@ async function checkSession() {
             data.session.user;
 
         await startApp();
-
     }
-
 }
 
 
 /* =====================================================
-   START APP
+   START
 ===================================================== */
 
 async function startApp() {
 
     document.getElementById(
         "loginScreen"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 
     document.getElementById(
         "mainApp"
-    ).style.display =
-        "block";
+    ).style.display = "block";
 
 
     await loadSpace();
@@ -1557,12 +1655,11 @@ async function startApp() {
     await loadRecipes();
 
     setupRealtime();
-
 }
 
 
 /* =====================================================
-   FIND SHARED SPACE
+   LOAD SPACE
 ===================================================== */
 
 async function loadSpace() {
@@ -1572,12 +1669,12 @@ async function loadSpace() {
         error
     } =
         await supabaseClient
-            .from("recipe_space_members")
-            .select("space_id")
-            .eq(
-                "user_id",
-                currentUser.id
-            );
+        .from("recipe_space_members")
+        .select("space_id")
+        .eq(
+            "user_id",
+            currentUser.id
+        );
 
 
     if (error) {
@@ -1589,7 +1686,6 @@ async function loadSpace() {
         );
 
         return;
-
     }
 
 
@@ -1600,13 +1696,11 @@ async function loadSpace() {
         );
 
         return;
-
     }
 
 
     currentSpace =
         data[0].space_id;
-
 }
 
 
@@ -1624,12 +1718,12 @@ async function loadRecipes() {
         error
     } =
         await supabaseClient
-            .from("recipes")
-            .select("*")
-            .eq(
-                "space_id",
-                currentSpace
-            );
+        .from("recipes")
+        .select("*")
+        .eq(
+            "space_id",
+            currentSpace
+        );
 
 
     if (error) {
@@ -1641,7 +1735,6 @@ async function loadRecipes() {
         );
 
         return;
-
     }
 
 
@@ -1651,16 +1744,14 @@ async function loadRecipes() {
 
     await attachPhotoUrls();
 
-
     renderFilters();
 
     renderRecipes();
-
 }
 
 
 /* =====================================================
-   PHOTO URLS
+   LOAD PHOTO URLS
 ===================================================== */
 
 async function attachPhotoUrls() {
@@ -1670,35 +1761,31 @@ async function attachPhotoUrls() {
         of recipes
     ) {
 
-
         const {
             data: photos
         } =
             await supabaseClient
-                .from("recipe_photos")
-                .select("*")
-                .eq(
-                    "recipe_id",
-                    recipe.id
-                )
-                .order(
-                    "created_at",
-                    {
-                        ascending: true
-                    }
-                );
+            .from("recipe_photos")
+            .select("*")
+            .eq(
+                "recipe_id",
+                recipe.id
+            )
+            .order(
+                "created_at",
+                {
+                    ascending: true
+                }
+            );
 
 
-        recipe.photos =
-            [];
+        recipe.photos = [];
 
 
         if (
-            photos
-            &&
+            photos &&
             photos.length
         ) {
-
 
             for (
                 const photo
@@ -1709,36 +1796,31 @@ async function attachPhotoUrls() {
                     data: signed
                 } =
                     await supabaseClient
-                        .storage
-                        .from("recipe-photos")
-                        .createSignedUrl(
-                            photo.storage_path,
-                            3600
-                        );
+                    .storage
+                    .from("recipe-photos")
+                    .createSignedUrl(
+                        photo.storage_path,
+                        3600
+                    );
 
 
                 if (
-                    signed
-                    &&
+                    signed &&
                     signed.signedUrl
                 ) {
 
-                    recipe.photos.push(
-                        {
-                            ...photo,
-                            url:
-                                signed.signedUrl
-                        }
-                    );
+                    recipe.photos.push({
 
+                        ...photo,
+
+                        url:
+                            signed.signedUrl
+
+                    });
                 }
-
             }
-
         }
-
     }
-
 }
 
 
@@ -1773,12 +1855,10 @@ function renderFilters() {
     categories.forEach(
         category => {
 
-
             const button =
                 document.createElement(
                     "button"
                 );
-
 
             button.className =
                 "filter";
@@ -1792,7 +1872,6 @@ function renderFilters() {
                 button.classList.add(
                     "active"
                 );
-
             }
 
 
@@ -1809,22 +1888,19 @@ function renderFilters() {
                     renderFilters();
 
                     renderRecipes();
-
                 };
 
 
             container.appendChild(
                 button
             );
-
         }
     );
-
 }
 
 
 /* =====================================================
-   RENDER RECIPES
+   RENDER RECIPE GRID
 ===================================================== */
 
 function renderRecipes() {
@@ -1838,7 +1914,8 @@ function renderRecipes() {
     const search =
         document.getElementById(
             "search"
-        ).value
+        )
+        .value
         .trim()
         .toLowerCase();
 
@@ -1853,68 +1930,54 @@ function renderRecipes() {
         recipes.filter(
             recipe => {
 
-
                 const matchesSearch =
-
                     recipe.title
-                        .toLowerCase()
-                        .includes(search);
+                    .toLowerCase()
+                    .includes(search);
 
 
                 const matchesCategory =
-
-                    currentFilter ===
-                    "All"
+                    currentFilter === "All"
                     ||
                     recipe.category ===
                     currentFilter;
 
 
                 return (
-                    matchesSearch
-                    &&
+                    matchesSearch &&
                     matchesCategory
                 );
-
             }
         );
 
 
-    /* SORT */
-
     filtered.sort(
         (a, b) => {
 
-
             if (
-                sort ===
-                "name"
+                sort === "name"
             ) {
 
                 return a.title
                     .localeCompare(
                         b.title
                     );
-
             }
 
 
             if (
-                sort ===
-                "nameDesc"
+                sort === "nameDesc"
             ) {
 
                 return b.title
                     .localeCompare(
                         a.title
                     );
-
             }
 
 
             if (
-                sort ===
-                "newest"
+                sort === "newest"
             ) {
 
                 return new Date(
@@ -1924,13 +1987,11 @@ function renderRecipes() {
                 new Date(
                     a.created_at
                 );
-
             }
 
 
             if (
-                sort ===
-                "oldest"
+                sort === "oldest"
             ) {
 
                 return new Date(
@@ -1940,7 +2001,6 @@ function renderRecipes() {
                 new Date(
                     b.created_at
                 );
-
             }
 
 
@@ -1953,7 +2013,6 @@ function renderRecipes() {
                     a.rating || 0
                 )
             );
-
         }
     );
 
@@ -1962,15 +2021,14 @@ function renderRecipes() {
 
 
     if (
-        filtered.length ===
-        0
+        filtered.length === 0
     ) {
 
         grid.innerHTML = `
 
             <div
-                class="empty"
-                style="grid-column:1/-1;">
+            class="empty"
+            style="grid-column:1/-1;">
 
                 <div class="empty-icon">
                     🍳
@@ -1985,13 +2043,11 @@ function renderRecipes() {
         `;
 
         return;
-
     }
 
 
     filtered.forEach(
         recipe => {
-
 
             const card =
                 document.createElement(
@@ -2004,21 +2060,24 @@ function renderRecipes() {
 
 
             const photo =
-                recipe.photos
-                &&
+                recipe.photos &&
                 recipe.photos.length
-                    ? recipe.photos[0].url
-                    : null;
+                ?
+                recipe.photos[0].url
+                :
+                null;
 
 
             const stars =
                 recipe.rating
-                    ? "⭐".repeat(
-                        Math.round(
-                            recipe.rating
-                        )
+                ?
+                "⭐".repeat(
+                    Math.round(
+                        recipe.rating
                     )
-                    : "No rating";
+                )
+                :
+                "No rating";
 
 
             card.innerHTML = `
@@ -2029,21 +2088,23 @@ function renderRecipes() {
                     ?
 
                     `<img
-                        class="recipe-image"
-                        src="${photo}"
-                        alt="">`
+                    class="recipe-image"
+                    src="${photo}"
+                    alt="">`
 
                     :
 
-                    `<div class="no-image">
+                    `<div
+                    class="no-image">
                         🍽️
                     </div>`
                 }
 
+                <div
+                class="recipe-info">
 
-                <div class="recipe-info">
-
-                    <div class="recipe-title">
+                    <div
+                    class="recipe-title">
 
                         ${escapeHtml(
                             recipe.title
@@ -2051,8 +2112,8 @@ function renderRecipes() {
 
                     </div>
 
-
-                    <div class="recipe-category">
+                    <div
+                    class="recipe-category">
 
                         ${escapeHtml(
                             recipe.category
@@ -2060,8 +2121,8 @@ function renderRecipes() {
 
                     </div>
 
-
-                    <div class="rating">
+                    <div
+                    class="rating">
 
                         ${stars}
 
@@ -2078,17 +2139,542 @@ function renderRecipes() {
                     openRecipe(
                         recipe.id
                     );
-
                 };
 
 
             grid.appendChild(
                 card
             );
-
         }
     );
+}
 
+
+/* =====================================================
+   FORMAT INGREDIENTS
+===================================================== */
+
+function formatIngredients(
+    text
+) {
+
+    if (!text || !text.trim()) {
+
+        return `
+
+            <div class="ingredient-row">
+
+                <span
+                style="color:#aaa;">
+
+                    No ingredients added.
+
+                </span>
+
+            </div>
+
+        `;
+    }
+
+
+    const lines =
+        text
+        .split(/\r?\n/)
+        .map(
+            line =>
+                line.trim()
+        )
+        .filter(
+            line =>
+                line.length > 0
+        );
+
+
+    return lines
+        .map(
+            line => `
+
+                <div
+                class="ingredient-row">
+
+                    <span
+                    class="ingredient-dot">
+                    </span>
+
+                    <span>
+
+                        ${escapeHtml(
+                            line
+                        )}
+
+                    </span>
+
+                </div>
+
+            `
+        )
+        .join("");
+}
+
+
+/* =====================================================
+   FORMAT INSTRUCTIONS
+===================================================== */
+
+function formatInstructions(
+    text
+) {
+
+    if (!text || !text.trim()) {
+
+        return `
+
+            <div
+            style="
+                color:#aaa;
+                font-size:15px;
+            ">
+
+                No instructions added.
+
+            </div>
+
+        `;
+    }
+
+
+    const lines =
+        text
+        .split(/\r?\n/)
+        .map(
+            line =>
+                line.trim()
+        )
+        .filter(
+            line =>
+                line.length > 0
+        );
+
+
+    return lines
+        .map(
+            (line, index) => `
+
+                <div
+                class="instruction-row">
+
+                    <div
+                    class="instruction-number">
+
+                        ${index + 1}
+
+                    </div>
+
+                    <div
+                    class="instruction-text">
+
+                        ${escapeHtml(
+                            line
+                        )}
+
+                    </div>
+
+                </div>
+
+            `
+        )
+        .join("");
+}
+
+
+/* =====================================================
+   OPEN RECIPE DETAIL
+===================================================== */
+
+function openRecipe(id) {
+
+    const recipe =
+        recipes.find(
+            r =>
+                r.id === id
+        );
+
+
+    if (!recipe) return;
+
+
+    const stars =
+        recipe.rating
+        ?
+        "⭐".repeat(
+            Math.round(
+                recipe.rating
+            )
+        )
+        :
+        "No rating";
+
+
+    const ratingNumber =
+        recipe.rating
+        ?
+        Number(
+            recipe.rating
+        ).toFixed(1)
+        :
+        "";
+
+
+    let mainPhoto = "";
+
+
+    if (
+        recipe.photos &&
+        recipe.photos.length
+    ) {
+
+        mainPhoto = `
+
+            <img
+            class="detail-main-photo"
+            src="${recipe.photos[0].url}"
+            alt="">
+
+        `;
+    }
+
+
+    else {
+
+        mainPhoto = `
+
+            <div
+            class="detail-no-photo">
+
+                🍽️
+
+            </div>
+
+        `;
+    }
+
+
+    let photoStrip = "";
+
+
+    if (
+        recipe.photos &&
+        recipe.photos.length > 1
+    ) {
+
+        photoStrip = `
+
+            <div
+            class="detail-photo-strip">
+
+                ${
+                    recipe.photos
+                    .map(
+                        photo => `
+
+                            <img
+                            class="detail-small-photo"
+                            src="${photo.url}"
+                            alt="">
+
+                        `
+                    )
+                    .join("")
+                }
+
+            </div>
+
+        `;
+    }
+
+
+    const notes =
+        recipe.notes &&
+        recipe.notes.trim()
+        ?
+        escapeHtml(
+            recipe.notes
+        )
+        :
+        "No notes yet.";
+
+
+    document.getElementById(
+        "detailContent"
+    ).innerHTML = `
+
+
+        <!-- HERO PHOTO -->
+
+        <div
+        class="detail-hero">
+
+            ${mainPhoto}
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div
+        class="detail-body">
+
+
+            <!-- TITLE -->
+
+            <div
+            class="detail-top">
+
+                <h1
+                class="detail-title">
+
+                    ${escapeHtml(
+                        recipe.title
+                    )}
+
+                </h1>
+
+
+                <div
+                class="detail-meta">
+
+                    <span
+                    class="detail-stars">
+
+                        ${stars}
+
+                    </span>
+
+
+                    ${
+                        ratingNumber
+                        ?
+
+                        `<span
+                        class="detail-rating-number">
+
+                            ${ratingNumber}
+
+                        </span>`
+
+                        :
+
+                        ""
+                    }
+
+
+                    <span
+                    class="detail-category-pill">
+
+                        ${escapeHtml(
+                            recipe.category
+                        )}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- INGREDIENTS -->
+
+            <div
+            class="detail-section">
+
+                <div
+                class="detail-section-header">
+
+                    <span
+                    class="detail-section-icon">
+
+                        🥕
+                    
+                    </span>
+
+                    <span
+                    class="detail-section-title">
+
+                        Ingredients
+
+                    </span>
+
+                </div>
+
+
+                <div
+                class="ingredients-box">
+
+                    ${formatIngredients(
+                        recipe.ingredients
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <!-- INSTRUCTIONS -->
+
+            <div
+            class="detail-section">
+
+                <div
+                class="detail-section-header">
+
+                    <span
+                    class="detail-section-icon">
+
+                        👨‍🍳
+
+                    </span>
+
+                    <span
+                    class="detail-section-title">
+
+                        Instructions
+
+                    </span>
+
+                </div>
+
+
+                <div
+                class="instruction-list">
+
+                    ${formatInstructions(
+                        recipe.instructions
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTES -->
+
+            <div
+            class="detail-section">
+
+                <div
+                class="detail-section-header">
+
+                    <span
+                    class="detail-section-icon">
+
+                        ❤️
+
+                    </span>
+
+                    <span
+                    class="detail-section-title">
+
+                        Our Notes
+
+                    </span>
+
+                </div>
+
+
+                <div
+                class="notes-box">
+
+                    ${notes}
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTOS -->
+
+            ${
+                recipe.photos &&
+                recipe.photos.length > 1
+
+                ?
+
+                `
+
+                <div
+                class="detail-section">
+
+                    <div
+                    class="detail-section-header">
+
+                        <span
+                        class="detail-section-icon">
+
+                            📸
+
+                        </span>
+
+                        <span
+                        class="detail-section-title">
+
+                            Photos
+
+                        </span>
+
+                    </div>
+
+
+                    ${photoStrip}
+
+                </div>
+
+                `
+
+                :
+
+                ""
+            }
+
+
+            <!-- ACTIONS -->
+
+            <div
+            class="detail-actions">
+
+                <button
+                class="secondary-button"
+                onclick="
+                    editRecipe('${recipe.id}')
+                ">
+
+                    ✏️ Edit
+
+                </button>
+
+
+                <button
+                class="secondary-button"
+                onclick="
+                    closeDetailModal()
+                ">
+
+                    Done
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "detailModal"
+    ).classList.add(
+        "visible"
+    );
 }
 
 
@@ -2098,8 +2684,7 @@ function renderRecipes() {
 
 function openNewRecipe() {
 
-    editingRecipeId =
-        null;
+    editingRecipeId = null;
 
 
     document.getElementById(
@@ -2110,8 +2695,7 @@ function openNewRecipe() {
 
     document.getElementById(
         "recipeTitle"
-    ).value =
-        "";
+    ).value = "";
 
 
     document.getElementById(
@@ -2122,38 +2706,32 @@ function openNewRecipe() {
 
     document.getElementById(
         "recipeRating"
-    ).value =
-        "";
+    ).value = "";
 
 
     document.getElementById(
         "recipeIngredients"
-    ).value =
-        "";
+    ).value = "";
 
 
     document.getElementById(
         "recipeInstructions"
-    ).value =
-        "";
+    ).value = "";
 
 
     document.getElementById(
         "recipeNotes"
-    ).value =
-        "";
+    ).value = "";
 
 
     document.getElementById(
         "photoInput"
-    ).value =
-        "";
+    ).value = "";
 
 
     document.getElementById(
         "existingPhotos"
-    ).innerHTML =
-        "";
+    ).innerHTML = "";
 
 
     document.getElementById(
@@ -2167,7 +2745,6 @@ function openNewRecipe() {
     ).classList.add(
         "visible"
     );
-
 }
 
 
@@ -2189,6 +2766,9 @@ function editRecipe(id) {
 
     editingRecipeId =
         id;
+
+
+    closeDetailModal();
 
 
     document.getElementById(
@@ -2235,8 +2815,7 @@ function editRecipe(id) {
 
     document.getElementById(
         "photoInput"
-    ).value =
-        "";
+    ).value = "";
 
 
     renderExistingPhotos(
@@ -2255,7 +2834,6 @@ function editRecipe(id) {
     ).classList.add(
         "visible"
     );
-
 }
 
 
@@ -2277,19 +2855,16 @@ function renderExistingPhotos(
 
 
     if (
-        !recipe.photos
-        ||
+        !recipe.photos ||
         !recipe.photos.length
     ) {
 
         return;
-
     }
 
 
     recipe.photos.forEach(
         photo => {
-
 
             const img =
                 document.createElement(
@@ -2308,10 +2883,8 @@ function renderExistingPhotos(
             container.appendChild(
                 img
             );
-
         }
     );
-
 }
 
 
@@ -2324,7 +2897,9 @@ async function saveRecipe() {
     const title =
         document.getElementById(
             "recipeTitle"
-        ).value.trim();
+        )
+        .value
+        .trim();
 
 
     if (!title) {
@@ -2334,7 +2909,6 @@ async function saveRecipe() {
         );
 
         return;
-
     }
 
 
@@ -2361,17 +2935,14 @@ async function saveRecipe() {
             document.getElementById(
                 "recipeRating"
             ).value
-                ?
-
-                Number(
-                    document.getElementById(
-                        "recipeRating"
-                    ).value
-                )
-
-                :
-
-                null,
+            ?
+            Number(
+                document.getElementById(
+                    "recipeRating"
+                ).value
+            )
+            :
+            null,
 
         category:
             document.getElementById(
@@ -2383,34 +2954,28 @@ async function saveRecipe() {
 
         updated_at:
             new Date().toISOString()
-
     };
 
 
     let recipeId;
 
 
-    /* =========================================
-       UPDATE
-    ========================================= */
+    /* UPDATE */
 
-    if (
-        editingRecipeId
-    ) {
-
+    if (editingRecipeId) {
 
         const {
             error
         } =
             await supabaseClient
-                .from("recipes")
-                .update(
-                    recipeData
-                )
-                .eq(
-                    "id",
-                    editingRecipeId
-                );
+            .from("recipes")
+            .update(
+                recipeData
+            )
+            .eq(
+                "id",
+                editingRecipeId
+            );
 
 
         if (error) {
@@ -2420,27 +2985,20 @@ async function saveRecipe() {
             );
 
             return;
-
         }
 
 
         recipeId =
             editingRecipeId;
-
-
     }
 
 
-    /* =========================================
-       CREATE
-    ========================================= */
+    /* CREATE */
 
     else {
 
-
         recipeData.space_id =
             currentSpace;
-
 
         recipeData.created_by =
             currentUser.id;
@@ -2451,12 +3009,12 @@ async function saveRecipe() {
             error
         } =
             await supabaseClient
-                .from("recipes")
-                .insert(
-                    recipeData
-                )
-                .select()
-                .single();
+            .from("recipes")
+            .insert(
+                recipeData
+            )
+            .select()
+            .single();
 
 
         if (error) {
@@ -2466,19 +3024,15 @@ async function saveRecipe() {
             );
 
             return;
-
         }
 
 
         recipeId =
             data.id;
-
     }
 
 
-    /* =========================================
-       UPLOAD PHOTOS
-    ========================================= */
+    /* PHOTOS */
 
     const files =
         document.getElementById(
@@ -2487,28 +3041,23 @@ async function saveRecipe() {
 
 
     if (
-        files
-        &&
+        files &&
         files.length
     ) {
-
 
         for (
             const file
             of files
         ) {
 
-
             const safeName =
-                file.name
-                    .replace(
-                        /[^a-zA-Z0-9._-]/g,
-                        "_"
-                    );
+                file.name.replace(
+                    /[^a-zA-Z0-9._-]/g,
+                    "_"
+                );
 
 
             const path =
-
                 currentSpace
                 +
                 "/"
@@ -2528,22 +3077,18 @@ async function saveRecipe() {
                 error: uploadError
             } =
                 await supabaseClient
-                    .storage
-                    .from(
-                        "recipe-photos"
-                    )
-                    .upload(
-                        path,
-                        file,
-                        {
-                            upsert: false
-                        }
-                    );
+                .storage
+                .from("recipe-photos")
+                .upload(
+                    path,
+                    file,
+                    {
+                        upsert: false
+                    }
+                );
 
 
-            if (
-                uploadError
-            ) {
+            if (uploadError) {
 
                 alert(
                     "Recipe saved, but a photo could not be uploaded:\n\n"
@@ -2552,7 +3097,6 @@ async function saveRecipe() {
                 );
 
                 continue;
-
             }
 
 
@@ -2560,48 +3104,38 @@ async function saveRecipe() {
                 error: photoError
             } =
                 await supabaseClient
-                    .from(
-                        "recipe_photos"
-                    )
-                    .insert({
+                .from("recipe_photos")
+                .insert({
 
-                        recipe_id:
-                            recipeId,
+                    recipe_id:
+                        recipeId,
 
-                        space_id:
-                            currentSpace,
+                    space_id:
+                        currentSpace,
 
-                        storage_path:
-                            path,
+                    storage_path:
+                        path,
 
-                        created_by:
-                            currentUser.id
-
-                    });
+                    created_by:
+                        currentUser.id
+                });
 
 
-            if (
-                photoError
-            ) {
+            if (photoError) {
 
                 alert(
                     "Photo uploaded but could not be registered:\n\n"
                     +
                     photoError.message
                 );
-
             }
-
         }
-
     }
 
 
     closeEditModal();
 
-
     await loadRecipes();
-
 }
 
 
@@ -2611,9 +3145,7 @@ async function saveRecipe() {
 
 async function deleteCurrentRecipe() {
 
-    if (
-        !editingRecipeId
-    ) return;
+    if (!editingRecipeId) return;
 
 
     const recipe =
@@ -2636,16 +3168,10 @@ async function deleteCurrentRecipe() {
     if (!confirmed) return;
 
 
-    /*
-     * Delete storage photos first.
-     */
-
     if (
-        recipe.photos
-        &&
+        recipe.photos &&
         recipe.photos.length
     ) {
-
 
         const paths =
             recipe.photos.map(
@@ -2655,14 +3181,9 @@ async function deleteCurrentRecipe() {
 
 
         await supabaseClient
-            .storage
-            .from(
-                "recipe-photos"
-            )
-            .remove(
-                paths
-            );
-
+        .storage
+        .from("recipe-photos")
+        .remove(paths);
     }
 
 
@@ -2670,12 +3191,12 @@ async function deleteCurrentRecipe() {
         error
     } =
         await supabaseClient
-            .from("recipes")
-            .delete()
-            .eq(
-                "id",
-                editingRecipeId
-            );
+        .from("recipes")
+        .delete()
+        .eq(
+            "id",
+            editingRecipeId
+        );
 
 
     if (error) {
@@ -2685,187 +3206,12 @@ async function deleteCurrentRecipe() {
         );
 
         return;
-
     }
 
 
     closeEditModal();
 
-
     await loadRecipes();
-
-}
-
-
-/* =====================================================
-   OPEN RECIPE
-===================================================== */
-
-function openRecipe(id) {
-
-    const recipe =
-        recipes.find(
-            r =>
-                r.id === id
-        );
-
-
-    if (!recipe) return;
-
-
-    const stars =
-        recipe.rating
-            ? "⭐".repeat(
-                Math.round(
-                    recipe.rating
-                )
-            )
-            : "No rating";
-
-
-    let photosHTML = "";
-
-
-    if (
-        recipe.photos
-        &&
-        recipe.photos.length
-    ) {
-
-
-        photosHTML =
-            recipe.photos
-                .map(
-                    photo => `
-
-                        <img
-                            class="detail-photo"
-                            src="${photo.url}"
-                            alt="">
-
-                    `
-                )
-                .join("");
-
-    }
-
-
-    document.getElementById(
-        "detailContent"
-    ).innerHTML = `
-
-        ${photosHTML}
-
-
-        <div class="detail-title">
-
-            ${escapeHtml(
-                recipe.title
-            )}
-
-        </div>
-
-
-        <div class="detail-rating">
-
-            ${stars}
-
-            &nbsp;
-
-            ${escapeHtml(
-                recipe.category
-            )}
-
-        </div>
-
-
-        <div class="detail-section">
-
-            <h3>
-                Ingredients
-            </h3>
-
-            <div class="detail-text">
-
-                ${escapeHtml(
-                    recipe.ingredients
-                    ||
-                    "No ingredients added."
-                )}
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-section">
-
-            <h3>
-                Instructions
-            </h3>
-
-            <div class="detail-text">
-
-                ${escapeHtml(
-                    recipe.instructions
-                    ||
-                    "No instructions added."
-                )}
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-section">
-
-            <h3>
-                Our Notes
-            </h3>
-
-            <div class="detail-text">
-
-                ${escapeHtml(
-                    recipe.notes
-                    ||
-                    "No notes yet."
-                )}
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-actions">
-
-            <button
-                class="secondary-button"
-                onclick="editRecipe('${recipe.id}')">
-
-                ✏️ Edit
-
-            </button>
-
-
-            <button
-                class="secondary-button"
-                onclick="closeDetailModal()">
-
-                Done
-
-            </button>
-
-        </div>
-
-    `;
-
-
-    document.getElementById(
-        "detailModal"
-    ).classList.add(
-        "visible"
-    );
-
 }
 
 
@@ -2880,7 +3226,6 @@ function closeEditModal() {
     ).classList.remove(
         "visible"
     );
-
 }
 
 
@@ -2891,7 +3236,6 @@ function closeDetailModal() {
     ).classList.remove(
         "visible"
     );
-
 }
 
 
@@ -2905,45 +3249,47 @@ function setupRealtime() {
 
 
     supabaseClient
-        .channel(
-            "recipe-book-live"
-        )
-        .on(
-            "postgres_changes",
-            {
-                event: "*",
-                schema: "public",
-                table: "recipes",
-                filter:
-                    "space_id=eq."
-                    +
-                    currentSpace
-            },
-            async function() {
+    .channel(
+        "recipe-book-live"
+    )
 
-                await loadRecipes();
+    .on(
+        "postgres_changes",
+        {
+            event: "*",
+            schema: "public",
+            table: "recipes",
+            filter:
+                "space_id=eq."
+                +
+                currentSpace
+        },
+        async function() {
 
-            }
-        )
-        .on(
-            "postgres_changes",
-            {
-                event: "*",
-                schema: "public",
-                table: "recipe_photos",
-                filter:
-                    "space_id=eq."
-                    +
-                    currentSpace
-            },
-            async function() {
+            await loadRecipes();
 
-                await loadRecipes();
+        }
+    )
 
-            }
-        )
-        .subscribe();
+    .on(
+        "postgres_changes",
+        {
+            event: "*",
+            schema: "public",
+            table: "recipe_photos",
+            filter:
+                "space_id=eq."
+                +
+                currentSpace
+        },
+        async function() {
 
+            await loadRecipes();
+
+        }
+    )
+
+    .subscribe();
 }
 
 
@@ -2958,13 +3304,10 @@ function escapeHtml(text) {
             "div"
         );
 
-
     div.textContent =
         text;
 
-
     return div.innerHTML;
-
 }
 
 
@@ -2975,7 +3318,6 @@ function escapeHtml(text) {
 checkSession();
 
 </script>
-
 
 </body>
 
