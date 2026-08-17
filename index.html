@@ -6,10 +6,8 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,
-initial-scale=1.0,
-maximum-scale=1.0,
-user-scalable=no,
+content="width=device-width, initial-scale=1.0,
+maximum-scale=1.0, user-scalable=no,
 viewport-fit=cover">
 
 <meta name="theme-color" content="#fff8f2">
@@ -19,17 +17,9 @@ viewport-fit=cover">
 <meta name="apple-mobile-web-app-status-bar-style"
 content="default">
 
-<meta name="apple-mobile-web-app-title"
-content="Our Recipe Book">
-
 <title>Our Recipe Book</title>
 
-
 <style>
-
-/* =====================================================
-   BASIC
-===================================================== */
 
 * {
     box-sizing: border-box;
@@ -61,11 +51,6 @@ body {
         sans-serif;
 }
 
-
-/* =====================================================
-   APP
-===================================================== */
-
 .app {
     min-height: 100dvh;
 
@@ -82,9 +67,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 .header {
     text-align: center;
@@ -118,9 +103,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    LOGIN
-===================================================== */
+========================= */
 
 .login-screen {
     min-height: 85dvh;
@@ -128,6 +113,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
 }
 
 .login-card {
@@ -136,8 +123,7 @@ body {
 
     padding: 28px;
 
-    background:
-        rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.82);
 
     border:
         1px solid
@@ -215,9 +201,9 @@ body {
 }
 
 
-/* =====================================================
-   TOP BAR
-===================================================== */
+/* =========================
+   SEARCH / SORT
+========================= */
 
 .topbar {
     display: flex;
@@ -267,9 +253,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    FILTERS
-===================================================== */
+========================= */
 
 .filters {
     display: flex;
@@ -292,9 +278,7 @@ body {
 .filter {
     flex-shrink: 0;
 
-    padding:
-        10px
-        14px;
+    padding: 10px 14px;
 
     border-radius: 15px;
 
@@ -319,9 +303,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    RECIPE GRID
-===================================================== */
+========================= */
 
 .recipe-grid {
     display: grid;
@@ -331,11 +315,6 @@ body {
 
     gap: 12px;
 }
-
-
-/* =====================================================
-   RECIPE CARD
-===================================================== */
 
 .recipe-card {
     overflow: hidden;
@@ -428,9 +407,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    ADD BUTTON
-===================================================== */
+========================= */
 
 .floating-add {
     position: fixed;
@@ -462,9 +441,9 @@ body {
 }
 
 
-/* =====================================================
-   MODAL
-===================================================== */
+/* =========================
+   MODALS
+========================= */
 
 .modal {
     display: none;
@@ -478,8 +457,7 @@ body {
     background:
         rgba(50,40,45,0.40);
 
-    backdrop-filter:
-        blur(8px);
+    backdrop-filter: blur(8px);
 
     padding:
         calc(env(safe-area-inset-top) + 12px)
@@ -498,9 +476,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    EDIT MODAL
-===================================================== */
+========================= */
 
 .modal-card {
     width: 100%;
@@ -552,9 +530,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    FORM
-===================================================== */
+========================= */
 
 .label {
     display: block;
@@ -627,9 +605,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    PHOTO MANAGEMENT
-===================================================== */
+========================= */
 
 .photo-preview {
     display: flex;
@@ -640,7 +618,7 @@ body {
 
     padding:
         8px
-        2px
+        4px
         12px;
 
     scrollbar-width: none;
@@ -676,10 +654,12 @@ body {
     top: -7px;
     right: -7px;
 
-    width: 27px;
-    height: 27px;
+    width: 28px;
+    height: 28px;
 
-    border: 2px solid #fffaf8;
+    border:
+        2px solid
+        #fffaf8;
 
     border-radius: 50%;
 
@@ -687,9 +667,7 @@ body {
 
     color: white;
 
-    font-size: 14px;
-
-    line-height: 23px;
+    font-size: 13px;
 
     padding: 0;
 
@@ -719,9 +697,9 @@ body {
 }
 
 
-/* =====================================================
-   SAVE / DELETE
-===================================================== */
+/* =========================
+   BUTTONS
+========================= */
 
 .save-button {
     width: 100%;
@@ -762,9 +740,9 @@ body {
 }
 
 
-/* =====================================================
-   RECIPE DETAIL
-===================================================== */
+/* =========================
+   DETAIL VIEW
+========================= */
 
 .detail-card {
     width: 100%;
@@ -786,19 +764,6 @@ body {
         rgba(70,50,55,0.25);
 }
 
-
-/* =====================================================
-   DETAIL HERO
-===================================================== */
-
-.detail-hero {
-    position: relative;
-
-    width: 100%;
-
-    background: #eee4e4;
-}
-
 .detail-main-photo {
     display: block;
 
@@ -815,7 +780,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-size: 65px;
@@ -827,11 +791,6 @@ body {
             #e9eef8
         );
 }
-
-
-/* =====================================================
-   DETAIL CONTENT
-===================================================== */
 
 .detail-body {
     padding: 24px;
@@ -879,18 +838,8 @@ body {
     letter-spacing: 1px;
 }
 
-.detail-rating-number {
-    font-size: 13px;
-
-    color: #8f8589;
-
-    font-weight: 600;
-}
-
 .detail-category-pill {
-    padding:
-        6px
-        10px;
+    padding: 6px 10px;
 
     border-radius: 12px;
 
@@ -902,11 +851,6 @@ body {
 
     font-weight: 650;
 }
-
-
-/* =====================================================
-   DETAIL SECTION
-===================================================== */
 
 .detail-section {
     margin-top: 22px;
@@ -939,19 +883,16 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    INGREDIENTS
-===================================================== */
+========================= */
 
 .ingredients-box {
-    padding:
-        14px
-        16px;
+    padding: 14px 16px;
 
     border-radius: 17px;
 
-    background:
-        #f8f1ec;
+    background: #f8f1ec;
 
     border:
         1px solid
@@ -965,9 +906,7 @@ body {
 
     gap: 10px;
 
-    padding:
-        7px
-        0;
+    padding: 7px 0;
 
     font-size: 15px;
 
@@ -990,9 +929,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    INSTRUCTIONS
-===================================================== */
+========================= */
 
 .instruction-list {
     display: flex;
@@ -1043,19 +982,16 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    NOTES
-===================================================== */
+========================= */
 
 .notes-box {
-    padding:
-        15px
-        16px;
+    padding: 15px 16px;
 
     border-radius: 17px;
 
-    background:
-        #fff0f1;
+    background: #fff0f1;
 
     border:
         1px solid
@@ -1071,9 +1007,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    DETAIL PHOTOS
-===================================================== */
+========================= */
 
 .detail-photo-strip {
     display: flex;
@@ -1103,9 +1039,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================
    DETAIL ACTIONS
-===================================================== */
+========================= */
 
 .detail-actions {
     display: grid;
@@ -1141,9 +1077,9 @@ body {
 }
 
 
-/* =====================================================
-   EMPTY / LOADING
-===================================================== */
+/* =========================
+   MISC
+========================= */
 
 .empty {
     text-align: center;
@@ -1167,11 +1103,6 @@ body {
     color: #a79ca0;
 }
 
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
 @media (min-width: 700px) {
 
     .recipe-grid {
@@ -1181,17 +1112,9 @@ body {
 
 }
 
-
-/* =====================================================
-   SMALL PHONE
-===================================================== */
-
 @media (max-width: 390px) {
 
     .recipe-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-
         gap: 8px;
     }
 
@@ -1217,12 +1140,9 @@ body {
 <body>
 
 
-<!-- =====================================================
-     LOGIN
-===================================================== -->
+<!-- LOGIN -->
 
-<div
-id="loginScreen"
+<div id="loginScreen"
 class="login-screen">
 
     <div class="login-card">
@@ -1239,15 +1159,13 @@ class="login-screen">
         id="email"
         class="input"
         type="email"
-        placeholder="Email"
-        autocomplete="email">
+        placeholder="Email">
 
         <input
         id="password"
         class="input"
         type="password"
-        placeholder="Password"
-        autocomplete="current-password">
+        placeholder="Password">
 
         <button
         class="primary-button"
@@ -1268,9 +1186,7 @@ class="login-screen">
 
 
 
-<!-- =====================================================
-     MAIN APP
-===================================================== -->
+<!-- MAIN APP -->
 
 <div
 id="mainApp"
@@ -1336,14 +1252,12 @@ style="display:none;">
 </div>
 
 
-<div
-id="filters"
+<div id="filters"
 class="filters">
 </div>
 
 
-<div
-id="recipeGrid"
+<div id="recipeGrid"
 class="recipe-grid">
 
     <div class="loading">
@@ -1370,12 +1284,9 @@ onclick="openNewRecipe()">
 
 
 
-<!-- =====================================================
-     EDIT RECIPE MODAL
-===================================================== -->
+<!-- EDIT MODAL -->
 
-<div
-id="editModal"
+<div id="editModal"
 class="modal">
 
 <div class="modal-card">
@@ -1550,18 +1461,14 @@ style="display:none;">
 
 
 
-<!-- =====================================================
-     DETAIL MODAL
-===================================================== -->
+<!-- DETAIL MODAL -->
 
-<div
-id="detailModal"
+<div id="detailModal"
 class="modal">
 
 <div class="detail-card">
 
-    <div
-    id="detailContent">
+    <div id="detailContent">
     </div>
 
 </div>
@@ -1576,7 +1483,7 @@ class="modal">
 <script>
 
 /* =====================================================
-   SUPABASE
+   SUPABASE CONNECTION
 ===================================================== */
 
 const SUPABASE_URL =
@@ -1584,6 +1491,7 @@ const SUPABASE_URL =
 
 const SUPABASE_KEY =
     "sb_publishable_athr8mE5QfYz1pzJRZsf1wN";
+
 
 const supabaseClient =
     window.supabase.createClient(
@@ -1593,7 +1501,7 @@ const supabaseClient =
 
 
 /* =====================================================
-   STATE
+   APP STATE
 ===================================================== */
 
 let currentUser = null;
@@ -1637,28 +1545,29 @@ async function login() {
     }
 
 
-    const {
-        data,
-        error: loginError
-    } =
+    const result =
         await supabaseClient.auth
         .signInWithPassword({
-            email,
-            password
+
+            email: email,
+
+            password: password
+
         });
 
 
-    if (loginError) {
+    if (result.error) {
 
         error.textContent =
-            loginError.message;
+            result.error.message;
 
         return;
     }
 
 
     currentUser =
-        data.user;
+        result.data.user;
+
 
     await startApp();
 }
@@ -1670,17 +1579,18 @@ async function login() {
 
 async function checkSession() {
 
-    const {
-        data
-    } =
+    const result =
         await supabaseClient.auth
         .getSession();
 
 
-    if (data.session) {
+    if (
+        result.data &&
+        result.data.session
+    ) {
 
         currentUser =
-            data.session.user;
+            result.data.session.user;
 
         await startApp();
     }
@@ -1688,7 +1598,7 @@ async function checkSession() {
 
 
 /* =====================================================
-   START
+   START APP
 ===================================================== */
 
 async function startApp() {
@@ -1702,7 +1612,15 @@ async function startApp() {
     ).style.display = "block";
 
 
-    await loadSpace();
+    const spaceLoaded =
+        await loadSpace();
+
+
+    if (!spaceLoaded) {
+
+        return;
+    }
+
 
     await loadRecipes();
 
@@ -1711,15 +1629,12 @@ async function startApp() {
 
 
 /* =====================================================
-   LOAD SPACE
+   LOAD SHARED SPACE
 ===================================================== */
 
 async function loadSpace() {
 
-    const {
-        data,
-        error
-    } =
+    const result =
         await supabaseClient
         .from("recipe_space_members")
         .select("space_id")
@@ -1729,30 +1644,36 @@ async function loadSpace() {
         );
 
 
-    if (error) {
+    if (result.error) {
 
         alert(
             "Could not find the shared recipe book:\n\n"
             +
-            error.message
+            result.error.message
         );
 
-        return;
+        return false;
     }
 
 
-    if (!data || data.length === 0) {
+    if (
+        !result.data ||
+        result.data.length === 0
+    ) {
 
         alert(
             "Your account is not connected to a recipe book yet."
         );
 
-        return;
+        return false;
     }
 
 
     currentSpace =
-        data[0].space_id;
+        result.data[0].space_id;
+
+
+    return true;
 }
 
 
@@ -1762,13 +1683,13 @@ async function loadSpace() {
 
 async function loadRecipes() {
 
-    if (!currentSpace) return;
+    if (!currentSpace) {
+
+        return;
+    }
 
 
-    const {
-        data,
-        error
-    } =
+    const result =
         await supabaseClient
         .from("recipes")
         .select("*")
@@ -1778,12 +1699,12 @@ async function loadRecipes() {
         );
 
 
-    if (error) {
+    if (result.error) {
 
         alert(
             "Could not load recipes:\n\n"
             +
-            error.message
+            result.error.message
         );
 
         return;
@@ -1791,7 +1712,7 @@ async function loadRecipes() {
 
 
     recipes =
-        data || [];
+        result.data || [];
 
 
     await attachPhotoUrls();
@@ -1813,9 +1734,7 @@ async function attachPhotoUrls() {
         of recipes
     ) {
 
-        const {
-            data: photos
-        } =
+        const result =
             await supabaseClient
             .from("recipe_photos")
             .select("*")
@@ -1835,18 +1754,16 @@ async function attachPhotoUrls() {
 
 
         if (
-            photos &&
-            photos.length
+            result.data &&
+            result.data.length
         ) {
 
             for (
                 const photo
-                of photos
+                of result.data
             ) {
 
-                const {
-                    data: signed
-                } =
+                const signed =
                     await supabaseClient
                     .storage
                     .from("recipe-photos")
@@ -1857,8 +1774,8 @@ async function attachPhotoUrls() {
 
 
                 if (
-                    signed &&
-                    signed.signedUrl
+                    signed.data &&
+                    signed.data.signedUrl
                 ) {
 
                     recipe.photos.push({
@@ -1866,7 +1783,7 @@ async function attachPhotoUrls() {
                         ...photo,
 
                         url:
-                            signed.signedUrl
+                            signed.data.signedUrl
 
                     });
                 }
@@ -1912,6 +1829,7 @@ function renderFilters() {
                     "button"
                 );
 
+
             button.className =
                 "filter";
 
@@ -1940,6 +1858,7 @@ function renderFilters() {
                     renderFilters();
 
                     renderRecipes();
+
                 };
 
 
@@ -1952,7 +1871,7 @@ function renderFilters() {
 
 
 /* =====================================================
-   RENDER RECIPE GRID
+   RENDER RECIPES
 ===================================================== */
 
 function renderRecipes() {
@@ -2086,9 +2005,7 @@ function renderRecipes() {
                     🍳
                 </div>
 
-                <div>
-                    No recipes found.
-                </div>
+                No recipes found.
 
             </div>
 
@@ -2148,9 +2065,12 @@ function renderRecipes() {
 
                     `<div
                     class="no-image">
+
                         🍽️
+
                     </div>`
                 }
+
 
                 <div
                 class="recipe-info">
@@ -2164,6 +2084,7 @@ function renderRecipes() {
 
                     </div>
 
+
                     <div
                     class="recipe-category">
 
@@ -2172,6 +2093,7 @@ function renderRecipes() {
                         )}
 
                     </div>
+
 
                     <div
                     class="rating">
@@ -2210,18 +2132,17 @@ function formatIngredients(
     text
 ) {
 
-    if (!text || !text.trim()) {
+    if (
+        !text ||
+        !text.trim()
+    ) {
 
         return `
 
-            <div class="ingredient-row">
+            <div
+            style="color:#aaa;">
 
-                <span
-                style="color:#aaa;">
-
-                    No ingredients added.
-
-                </span>
+                No ingredients added.
 
             </div>
 
@@ -2254,11 +2175,7 @@ function formatIngredients(
                     </span>
 
                     <span>
-
-                        ${escapeHtml(
-                            line
-                        )}
-
+                        ${escapeHtml(line)}
                     </span>
 
                 </div>
@@ -2277,15 +2194,15 @@ function formatInstructions(
     text
 ) {
 
-    if (!text || !text.trim()) {
+    if (
+        !text ||
+        !text.trim()
+    ) {
 
         return `
 
             <div
-            style="
-                color:#aaa;
-                font-size:15px;
-            ">
+            style="color:#aaa;">
 
                 No instructions added.
 
@@ -2322,12 +2239,11 @@ function formatInstructions(
 
                     </div>
 
+
                     <div
                     class="instruction-text">
 
-                        ${escapeHtml(
-                            line
-                        )}
+                        ${escapeHtml(line)}
 
                     </div>
 
@@ -2340,19 +2256,22 @@ function formatInstructions(
 
 
 /* =====================================================
-   OPEN RECIPE DETAIL
+   OPEN RECIPE
 ===================================================== */
 
 function openRecipe(id) {
 
     const recipe =
         recipes.find(
-            r =>
-                r.id === id
+            item =>
+                item.id === id
         );
 
 
-    if (!recipe) return;
+    if (!recipe) {
+
+        return;
+    }
 
 
     const stars =
@@ -2365,16 +2284,6 @@ function openRecipe(id) {
         )
         :
         "No rating";
-
-
-    const ratingNumber =
-        recipe.rating
-        ?
-        Number(
-            recipe.rating
-        ).toFixed(1)
-        :
-        "";
 
 
     let mainPhoto = "";
@@ -2393,9 +2302,8 @@ function openRecipe(id) {
             alt="">
 
         `;
-    }
 
-    else {
+    } else {
 
         mainPhoto = `
 
@@ -2403,40 +2311,6 @@ function openRecipe(id) {
             class="detail-no-photo">
 
                 🍽️
-
-            </div>
-
-        `;
-    }
-
-
-    let photoStrip = "";
-
-
-    if (
-        recipe.photos &&
-        recipe.photos.length > 1
-    ) {
-
-        photoStrip = `
-
-            <div
-            class="detail-photo-strip">
-
-                ${
-                    recipe.photos
-                    .map(
-                        photo => `
-
-                            <img
-                            class="detail-small-photo"
-                            src="${photo.url}"
-                            alt="">
-
-                        `
-                    )
-                    .join("")
-                }
 
             </div>
 
@@ -2455,13 +2329,67 @@ function openRecipe(id) {
         "No notes yet.";
 
 
+    let extraPhotos = "";
+
+
+    if (
+        recipe.photos &&
+        recipe.photos.length > 1
+    ) {
+
+        extraPhotos = `
+
+            <div
+            class="detail-section">
+
+                <div
+                class="detail-section-header">
+
+                    <span
+                    class="detail-section-icon">
+                        📸
+                    </span>
+
+                    <span
+                    class="detail-section-title">
+                        Photos
+                    </span>
+
+                </div>
+
+
+                <div
+                class="detail-photo-strip">
+
+                    ${
+                        recipe.photos
+                        .map(
+                            photo => `
+
+                                <img
+                                class="detail-small-photo"
+                                src="${photo.url}"
+                                alt="">
+
+                            `
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+            </div>
+
+        `;
+    }
+
+
     document.getElementById(
         "detailContent"
     ).innerHTML = `
 
-
         <div
-        class="detail-hero">
+        class="detail-main-photo-wrap">
 
             ${mainPhoto}
 
@@ -2494,23 +2422,6 @@ function openRecipe(id) {
                         ${stars}
 
                     </span>
-
-
-                    ${
-                        ratingNumber
-                        ?
-
-                        `<span
-                        class="detail-rating-number">
-
-                            ${ratingNumber}
-
-                        </span>`
-
-                        :
-
-                        ""
-                    }
 
 
                     <span
@@ -2618,43 +2529,7 @@ function openRecipe(id) {
             </div>
 
 
-            ${
-                recipe.photos &&
-                recipe.photos.length > 1
-
-                ?
-
-                `
-
-                <div
-                class="detail-section">
-
-                    <div
-                    class="detail-section-header">
-
-                        <span
-                        class="detail-section-icon">
-                            📸
-                        </span>
-
-                        <span
-                        class="detail-section-title">
-                            Photos
-                        </span>
-
-                    </div>
-
-
-                    ${photoStrip}
-
-                </div>
-
-                `
-
-                :
-
-                ""
-            }
+            ${extraPhotos}
 
 
             <div
@@ -2682,7 +2557,6 @@ function openRecipe(id) {
                 </button>
 
             </div>
-
 
         </div>
 
@@ -2775,12 +2649,15 @@ function editRecipe(id) {
 
     const recipe =
         recipes.find(
-            r =>
-                r.id === id
+            item =>
+                item.id === id
         );
 
 
-    if (!recipe) return;
+    if (!recipe) {
+
+        return;
+    }
 
 
     editingRecipeId =
@@ -2910,31 +2787,42 @@ function renderExistingPhotos(
                 "photo-item";
 
 
-            wrapper.innerHTML = `
-
-                <img
-                class="photo-thumb"
-                src="${photo.url}"
-                alt="">
+            const image =
+                document.createElement(
+                    "img"
+                );
 
 
-                <button
-                class="photo-delete"
-                title="Delete photo"
-                aria-label="Delete photo">
-
-                    🗑️
-
-                </button>
-
-            `;
+            image.className =
+                "photo-thumb";
 
 
-            wrapper
-            .querySelector(
-                ".photo-delete"
-            )
-            .onclick =
+            image.src =
+                photo.url;
+
+
+            image.alt = "";
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "photo-delete";
+
+
+            button.textContent =
+                "🗑️";
+
+
+            button.title =
+                "Delete photo";
+
+
+            button.onclick =
                 function(event) {
 
                     event.stopPropagation();
@@ -2942,9 +2830,16 @@ function renderExistingPhotos(
                     deletePhoto(
                         photo
                     );
-
                 };
 
+
+            wrapper.appendChild(
+                image
+            );
+
+            wrapper.appendChild(
+                button
+            );
 
             container.appendChild(
                 wrapper
@@ -2974,13 +2869,9 @@ async function deletePhoto(
     }
 
 
-    /* -----------------------------------------
-       DELETE ACTUAL FILE FROM STORAGE
-    ----------------------------------------- */
+    /* DELETE STORAGE FILE */
 
-    const {
-        error: storageError
-    } =
+    const storageResult =
         await supabaseClient
         .storage
         .from("recipe-photos")
@@ -2989,25 +2880,21 @@ async function deletePhoto(
         ]);
 
 
-    if (storageError) {
+    if (storageResult.error) {
 
         alert(
-            "The photo could not be deleted from storage:\n\n"
+            "The photo could not be deleted:\n\n"
             +
-            storageError.message
+            storageResult.error.message
         );
 
         return;
     }
 
 
-    /* -----------------------------------------
-       DELETE DATABASE RECORD
-    ----------------------------------------- */
+    /* DELETE DATABASE RECORD */
 
-    const {
-        error: databaseError
-    } =
+    const databaseResult =
         await supabaseClient
         .from("recipe_photos")
         .delete()
@@ -3017,29 +2904,22 @@ async function deletePhoto(
         );
 
 
-    if (databaseError) {
+    if (databaseResult.error) {
 
         alert(
-            "The image was removed, but its database record could not be removed:\n\n"
+            "The photo file was deleted, but its database record could not be removed:\n\n"
             +
-            databaseError.message
+            databaseResult.error.message
         );
 
         return;
     }
 
 
-    /* -----------------------------------------
-       REFRESH RECIPES
-    ----------------------------------------- */
+    /* RELOAD */
 
     await loadRecipes();
 
-
-    /* -----------------------------------------
-       REOPEN EDIT WINDOW
-       WITH UPDATED PHOTO LIST
-    ----------------------------------------- */
 
     const updatedRecipe =
         recipes.find(
@@ -3054,9 +2934,7 @@ async function deletePhoto(
         renderExistingPhotos(
             updatedRecipe
         );
-
     }
-
 }
 
 
@@ -3086,24 +2964,34 @@ async function saveRecipe() {
 
     const recipeData = {
 
-        title,
+        title:
+
+            title,
+
 
         ingredients:
+
             document.getElementById(
                 "recipeIngredients"
             ).value,
 
+
         instructions:
+
             document.getElementById(
                 "recipeInstructions"
             ).value,
 
+
         notes:
+
             document.getElementById(
                 "recipeNotes"
             ).value,
 
+
         rating:
+
             document.getElementById(
                 "recipeRating"
             ).value
@@ -3116,31 +3004,34 @@ async function saveRecipe() {
             :
             null,
 
+
         category:
+
             document.getElementById(
                 "recipeCategory"
             ).value,
 
+
         updated_by:
+
             currentUser.id,
 
+
         updated_at:
+
             new Date().toISOString()
+
     };
 
 
     let recipeId;
 
 
-    /* -----------------------------------------
-       UPDATE
-    ----------------------------------------- */
+    /* UPDATE EXISTING */
 
     if (editingRecipeId) {
 
-        const {
-            error
-        } =
+        const result =
             await supabaseClient
             .from("recipes")
             .update(
@@ -3152,10 +3043,10 @@ async function saveRecipe() {
             );
 
 
-        if (error) {
+        if (result.error) {
 
             alert(
-                error.message
+                result.error.message
             );
 
             return;
@@ -3168,23 +3059,19 @@ async function saveRecipe() {
     }
 
 
-    /* -----------------------------------------
-       CREATE
-    ----------------------------------------- */
+    /* CREATE NEW */
 
     else {
 
         recipeData.space_id =
             currentSpace;
 
+
         recipeData.created_by =
             currentUser.id;
 
 
-        const {
-            data,
-            error
-        } =
+        const result =
             await supabaseClient
             .from("recipes")
             .insert(
@@ -3194,10 +3081,10 @@ async function saveRecipe() {
             .single();
 
 
-        if (error) {
+        if (result.error) {
 
             alert(
-                error.message
+                result.error.message
             );
 
             return;
@@ -3205,13 +3092,11 @@ async function saveRecipe() {
 
 
         recipeId =
-            data.id;
+            result.data.id;
     }
 
 
-    /* -----------------------------------------
-       UPLOAD NEW PHOTOS
-    ----------------------------------------- */
+    /* UPLOAD NEW PHOTOS */
 
     const files =
         document.getElementById(
@@ -3252,9 +3137,7 @@ async function saveRecipe() {
                 safeName;
 
 
-            const {
-                error: uploadError
-            } =
+            const upload =
                 await supabaseClient
                 .storage
                 .from("recipe-photos")
@@ -3267,21 +3150,19 @@ async function saveRecipe() {
                 );
 
 
-            if (uploadError) {
+            if (upload.error) {
 
                 alert(
                     "Recipe saved, but a photo could not be uploaded:\n\n"
                     +
-                    uploadError.message
+                    upload.error.message
                 );
 
                 continue;
             }
 
 
-            const {
-                error: photoError
-            } =
+            const photoRecord =
                 await supabaseClient
                 .from("recipe_photos")
                 .insert({
@@ -3301,12 +3182,12 @@ async function saveRecipe() {
                 });
 
 
-            if (photoError) {
+            if (photoRecord.error) {
 
                 alert(
-                    "Photo uploaded but could not be registered:\n\n"
+                    "Photo uploaded, but its database record could not be created:\n\n"
                     +
-                    photoError.message
+                    photoRecord.error.message
                 );
             }
         }
@@ -3325,18 +3206,24 @@ async function saveRecipe() {
 
 async function deleteCurrentRecipe() {
 
-    if (!editingRecipeId) return;
+    if (!editingRecipeId) {
+
+        return;
+    }
 
 
     const recipe =
         recipes.find(
-            r =>
-                r.id ===
+            item =>
+                item.id ===
                 editingRecipeId
         );
 
 
-    if (!recipe) return;
+    if (!recipe) {
+
+        return;
+    }
 
 
     const confirmed =
@@ -3345,10 +3232,13 @@ async function deleteCurrentRecipe() {
         );
 
 
-    if (!confirmed) return;
+    if (!confirmed) {
+
+        return;
+    }
 
 
-    /* Delete all actual storage files */
+    /* DELETE STORAGE PHOTOS */
 
     if (
         recipe.photos &&
@@ -3362,21 +3252,21 @@ async function deleteCurrentRecipe() {
             );
 
 
-        const {
-            error: storageError
-        } =
+        const storageResult =
             await supabaseClient
             .storage
             .from("recipe-photos")
-            .remove(paths);
+            .remove(
+                paths
+            );
 
 
-        if (storageError) {
+        if (storageResult.error) {
 
             alert(
-                "Some photos could not be deleted:\n\n"
+                "The photos could not be deleted:\n\n"
                 +
-                storageError.message
+                storageResult.error.message
             );
 
             return;
@@ -3384,11 +3274,9 @@ async function deleteCurrentRecipe() {
     }
 
 
-    /* Delete recipe */
+    /* DELETE RECIPE */
 
-    const {
-        error
-    } =
+    const result =
         await supabaseClient
         .from("recipes")
         .delete()
@@ -3398,10 +3286,10 @@ async function deleteCurrentRecipe() {
         );
 
 
-    if (error) {
+    if (result.error) {
 
         alert(
-            error.message
+            result.error.message
         );
 
         return;
@@ -3439,12 +3327,15 @@ function closeDetailModal() {
 
 
 /* =====================================================
-   REALTIME
+   REALTIME SYNC
 ===================================================== */
 
 function setupRealtime() {
 
-    if (!currentSpace) return;
+    if (!currentSpace) {
+
+        return;
+    }
 
 
     supabaseClient
@@ -3496,15 +3387,19 @@ function setupRealtime() {
    ESCAPE HTML
 ===================================================== */
 
-function escapeHtml(text) {
+function escapeHtml(
+    text
+) {
 
     const div =
         document.createElement(
             "div"
         );
 
+
     div.textContent =
-        text;
+        text || "";
+
 
     return div.innerHTML;
 }
