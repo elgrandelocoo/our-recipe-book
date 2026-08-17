@@ -628,31 +628,80 @@ body {
 
 
 /* =====================================================
-   PHOTOS
+   PHOTO MANAGEMENT
 ===================================================== */
 
 .photo-preview {
     display: flex;
 
-    gap: 8px;
+    gap: 12px;
 
     overflow-x: auto;
 
     padding:
-        5px
-        0
-        10px;
+        8px
+        2px
+        12px;
+
+    scrollbar-width: none;
+}
+
+.photo-preview::-webkit-scrollbar {
+    display: none;
+}
+
+.photo-item {
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
 }
 
 .photo-thumb {
     width: 90px;
     height: 90px;
 
-    flex-shrink: 0;
-
     object-fit: cover;
 
     border-radius: 13px;
+
+    display: block;
+}
+
+.photo-delete {
+    position: absolute;
+
+    top: -7px;
+    right: -7px;
+
+    width: 27px;
+    height: 27px;
+
+    border: 2px solid #fffaf8;
+
+    border-radius: 50%;
+
+    background: #e9aeb7;
+
+    color: white;
+
+    font-size: 14px;
+
+    line-height: 23px;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px
+        rgba(100,60,70,0.20);
+}
+
+.photo-delete:active {
+    transform: scale(0.88);
 }
 
 .photo-input {
@@ -1178,8 +1227,7 @@ class="login-screen">
 
     <div class="login-card">
 
-        <div
-        class="header-icon">
+        <div class="header-icon">
             🍝
         </div>
 
@@ -1455,7 +1503,17 @@ placeholder="What did we think? What should we change next time?"></textarea>
 
 
 <label class="label">
-Food Photos
+Existing Food Photos
+</label>
+
+<div
+id="existingPhotos"
+class="photo-preview">
+</div>
+
+
+<label class="label">
+Add New Photos
 </label>
 
 <input
@@ -1464,12 +1522,6 @@ class="photo-input"
 type="file"
 accept="image/*"
 multiple>
-
-
-<div
-id="existingPhotos"
-class="photo-preview">
-</div>
 
 
 <button
@@ -1531,7 +1583,7 @@ const SUPABASE_URL =
     "https://geshdseudikxkzukdxpm.supabase.co";
 
 const SUPABASE_KEY =
-    "sb_publishable_athr8mE5QfYz1pzJRZsf1w_zkEJOfwN";
+    "sb_publishable_athr8mE5QfYz1pzJRZsf1wN";
 
 const supabaseClient =
     window.supabase.createClient(
@@ -2343,7 +2395,6 @@ function openRecipe(id) {
         `;
     }
 
-
     else {
 
         mainPhoto = `
@@ -2409,8 +2460,6 @@ function openRecipe(id) {
     ).innerHTML = `
 
 
-        <!-- HERO PHOTO -->
-
         <div
         class="detail-hero">
 
@@ -2419,13 +2468,9 @@ function openRecipe(id) {
         </div>
 
 
-        <!-- CONTENT -->
-
         <div
         class="detail-body">
 
-
-            <!-- TITLE -->
 
             <div
             class="detail-top">
@@ -2482,8 +2527,6 @@ function openRecipe(id) {
             </div>
 
 
-            <!-- INGREDIENTS -->
-
             <div
             class="detail-section">
 
@@ -2492,16 +2535,12 @@ function openRecipe(id) {
 
                     <span
                     class="detail-section-icon">
-
                         🥕
-                    
                     </span>
 
                     <span
                     class="detail-section-title">
-
                         Ingredients
-
                     </span>
 
                 </div>
@@ -2519,8 +2558,6 @@ function openRecipe(id) {
             </div>
 
 
-            <!-- INSTRUCTIONS -->
-
             <div
             class="detail-section">
 
@@ -2529,16 +2566,12 @@ function openRecipe(id) {
 
                     <span
                     class="detail-section-icon">
-
                         👨‍🍳
-
                     </span>
 
                     <span
                     class="detail-section-title">
-
                         Instructions
-
                     </span>
 
                 </div>
@@ -2556,8 +2589,6 @@ function openRecipe(id) {
             </div>
 
 
-            <!-- NOTES -->
-
             <div
             class="detail-section">
 
@@ -2566,16 +2597,12 @@ function openRecipe(id) {
 
                     <span
                     class="detail-section-icon">
-
                         ❤️
-
                     </span>
 
                     <span
                     class="detail-section-title">
-
                         Our Notes
-
                     </span>
 
                 </div>
@@ -2590,8 +2617,6 @@ function openRecipe(id) {
 
             </div>
 
-
-            <!-- PHOTOS -->
 
             ${
                 recipe.photos &&
@@ -2609,16 +2634,12 @@ function openRecipe(id) {
 
                         <span
                         class="detail-section-icon">
-
                             📸
-
                         </span>
 
                         <span
                         class="detail-section-title">
-
                             Photos
-
                         </span>
 
                     </div>
@@ -2635,8 +2656,6 @@ function openRecipe(id) {
                 ""
             }
 
-
-            <!-- ACTIONS -->
 
             <div
             class="detail-actions">
@@ -2838,7 +2857,7 @@ function editRecipe(id) {
 
 
 /* =====================================================
-   EXISTING PHOTOS
+   SHOW EXISTING PHOTOS
 ===================================================== */
 
 function renderExistingPhotos(
@@ -2859,6 +2878,21 @@ function renderExistingPhotos(
         !recipe.photos.length
     ) {
 
+        container.innerHTML = `
+
+            <div
+            style="
+                color:#aaa;
+                font-size:13px;
+                padding:5px 0 8px;
+            ">
+
+                No photos yet.
+
+            </div>
+
+        `;
+
         return;
     }
 
@@ -2866,25 +2900,163 @@ function renderExistingPhotos(
     recipe.photos.forEach(
         photo => {
 
-            const img =
+            const wrapper =
                 document.createElement(
-                    "img"
+                    "div"
                 );
 
 
-            img.className =
-                "photo-thumb";
+            wrapper.className =
+                "photo-item";
 
 
-            img.src =
-                photo.url;
+            wrapper.innerHTML = `
+
+                <img
+                class="photo-thumb"
+                src="${photo.url}"
+                alt="">
+
+
+                <button
+                class="photo-delete"
+                title="Delete photo"
+                aria-label="Delete photo">
+
+                    🗑️
+
+                </button>
+
+            `;
+
+
+            wrapper
+            .querySelector(
+                ".photo-delete"
+            )
+            .onclick =
+                function(event) {
+
+                    event.stopPropagation();
+
+                    deletePhoto(
+                        photo
+                    );
+
+                };
 
 
             container.appendChild(
-                img
+                wrapper
             );
         }
     );
+}
+
+
+/* =====================================================
+   DELETE INDIVIDUAL PHOTO
+===================================================== */
+
+async function deletePhoto(
+    photo
+) {
+
+    const confirmed =
+        confirm(
+            "Delete this photo?\n\nThis cannot be undone."
+        );
+
+
+    if (!confirmed) {
+
+        return;
+    }
+
+
+    /* -----------------------------------------
+       DELETE ACTUAL FILE FROM STORAGE
+    ----------------------------------------- */
+
+    const {
+        error: storageError
+    } =
+        await supabaseClient
+        .storage
+        .from("recipe-photos")
+        .remove([
+            photo.storage_path
+        ]);
+
+
+    if (storageError) {
+
+        alert(
+            "The photo could not be deleted from storage:\n\n"
+            +
+            storageError.message
+        );
+
+        return;
+    }
+
+
+    /* -----------------------------------------
+       DELETE DATABASE RECORD
+    ----------------------------------------- */
+
+    const {
+        error: databaseError
+    } =
+        await supabaseClient
+        .from("recipe_photos")
+        .delete()
+        .eq(
+            "id",
+            photo.id
+        );
+
+
+    if (databaseError) {
+
+        alert(
+            "The image was removed, but its database record could not be removed:\n\n"
+            +
+            databaseError.message
+        );
+
+        return;
+    }
+
+
+    /* -----------------------------------------
+       REFRESH RECIPES
+    ----------------------------------------- */
+
+    await loadRecipes();
+
+
+    /* -----------------------------------------
+       REOPEN EDIT WINDOW
+       WITH UPDATED PHOTO LIST
+    ----------------------------------------- */
+
+    const updatedRecipe =
+        recipes.find(
+            recipe =>
+                recipe.id ===
+                editingRecipeId
+        );
+
+
+    if (updatedRecipe) {
+
+        renderExistingPhotos(
+            updatedRecipe
+        );
+
+    }
+
 }
 
 
@@ -2960,7 +3132,9 @@ async function saveRecipe() {
     let recipeId;
 
 
-    /* UPDATE */
+    /* -----------------------------------------
+       UPDATE
+    ----------------------------------------- */
 
     if (editingRecipeId) {
 
@@ -2990,10 +3164,13 @@ async function saveRecipe() {
 
         recipeId =
             editingRecipeId;
+
     }
 
 
-    /* CREATE */
+    /* -----------------------------------------
+       CREATE
+    ----------------------------------------- */
 
     else {
 
@@ -3032,7 +3209,9 @@ async function saveRecipe() {
     }
 
 
-    /* PHOTOS */
+    /* -----------------------------------------
+       UPLOAD NEW PHOTOS
+    ----------------------------------------- */
 
     const files =
         document.getElementById(
@@ -3118,6 +3297,7 @@ async function saveRecipe() {
 
                     created_by:
                         currentUser.id
+
                 });
 
 
@@ -3140,7 +3320,7 @@ async function saveRecipe() {
 
 
 /* =====================================================
-   DELETE RECIPE
+   DELETE ENTIRE RECIPE
 ===================================================== */
 
 async function deleteCurrentRecipe() {
@@ -3161,12 +3341,14 @@ async function deleteCurrentRecipe() {
 
     const confirmed =
         confirm(
-            "Delete this recipe?"
+            "Delete this recipe and all of its photos?"
         );
 
 
     if (!confirmed) return;
 
+
+    /* Delete all actual storage files */
 
     if (
         recipe.photos &&
@@ -3180,12 +3362,29 @@ async function deleteCurrentRecipe() {
             );
 
 
-        await supabaseClient
-        .storage
-        .from("recipe-photos")
-        .remove(paths);
+        const {
+            error: storageError
+        } =
+            await supabaseClient
+            .storage
+            .from("recipe-photos")
+            .remove(paths);
+
+
+        if (storageError) {
+
+            alert(
+                "Some photos could not be deleted:\n\n"
+                +
+                storageError.message
+            );
+
+            return;
+        }
     }
 
+
+    /* Delete recipe */
 
     const {
         error
