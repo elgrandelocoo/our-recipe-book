@@ -1,0 +1,2982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no,
+      viewport-fit=cover">
+
+<meta name="theme-color" content="#fff8f2">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+      content="default">
+
+<meta name="apple-mobile-web-app-title"
+      content="Our Recipe Book">
+
+<title>Our Recipe Book</title>
+
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #fff8f2;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100dvh;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf6 0%,
+            #fff3f0 45%,
+            #f4f7ff 100%
+        );
+
+    color: #514b4b;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+
+    min-height: 100dvh;
+
+    padding:
+        calc(env(safe-area-inset-top) + 24px)
+        18px
+        calc(env(safe-area-inset-bottom) + 30px);
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 22px;
+
+}
+
+.header-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 8px;
+
+}
+
+.title {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.6px;
+
+    color: #554c50;
+
+}
+
+.subtitle {
+
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    color: #a59a9e;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-screen {
+
+    min-height: 85dvh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 28px;
+
+    background:
+        rgba(255,255,255,0.78);
+
+    border:
+        1px solid
+        rgba(150,130,130,0.10);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(120,90,90,0.10);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+.login-title {
+
+    text-align: center;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+.input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border:
+        1px solid
+        #e2d9dc;
+
+    border-radius: 15px;
+
+    background: #fff;
+
+    outline: none;
+
+    font:
+        16px
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    color: #554c50;
+
+}
+
+.input:focus {
+
+    border-color: #d3aebb;
+
+}
+
+.primary-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #e9c8d4;
+
+    color: #58474e;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+.error {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: #c47f86;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+.search {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px 16px;
+
+    border:
+        1px solid
+        #e6dfe0;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+.sort {
+
+    padding: 14px 10px;
+
+    border:
+        1px solid
+        #e6dfe0;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    color: #665d61;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   CATEGORY FILTER
+===================================================== */
+
+.filters {
+
+    display: flex;
+
+    gap: 7px;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+
+    margin-bottom: 18px;
+
+    scrollbar-width: none;
+
+}
+
+.filters::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.filter {
+
+    flex-shrink: 0;
+
+    padding:
+        10px
+        14px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid
+        #e7dfe2;
+
+    background:
+        rgba(255,255,255,0.65);
+
+    color: #9b9095;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+}
+
+.filter.active {
+
+    background: #ead7ee;
+
+    color: #63536a;
+
+    border-color: #d7c2dc;
+
+}
+
+
+/* =====================================================
+   RECIPE GRID
+===================================================== */
+
+.recipe-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+
+/* =====================================================
+   RECIPE CARD
+===================================================== */
+
+.recipe-card {
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    border:
+        1px solid
+        rgba(150,135,140,0.10);
+
+    box-shadow:
+        0 8px 25px
+        rgba(110,90,95,0.07);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease;
+
+}
+
+.recipe-card:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+.recipe-image {
+
+    width: 100%;
+
+    aspect-ratio: 1.25;
+
+    object-fit: cover;
+
+    display: block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5e5e5,
+            #e8edf8
+        );
+
+}
+
+.no-image {
+
+    width: 100%;
+
+    aspect-ratio: 1.25;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7e8eb,
+            #e8eff9
+        );
+
+}
+
+.recipe-info {
+
+    padding: 13px;
+
+}
+
+.recipe-title {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #554d51;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+.recipe-category {
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #a39a9e;
+
+}
+
+.rating {
+
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    color: #d49a58;
+
+}
+
+
+/* =====================================================
+   ADD BUTTON
+===================================================== */
+
+.floating-add {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom:
+        calc(
+            env(safe-area-inset-bottom)
+            + 22px
+        );
+
+    width: 60px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #e8c8d7;
+
+    color: #5b4850;
+
+    font-size: 31px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(120,90,100,0.20);
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(50,40,45,0.35);
+
+    backdrop-filter:
+        blur(7px);
+
+    padding:
+        calc(env(safe-area-inset-top) + 15px)
+        15px
+        calc(env(safe-area-inset-bottom) + 15px);
+
+    overflow-y: auto;
+
+}
+
+.modal.visible {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+}
+
+.modal-card {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-top: 10px;
+
+    background: #fffaf8;
+
+    border-radius: 28px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(70,50,55,0.22);
+
+}
+
+.modal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+}
+
+.modal-title {
+
+    font-size: 24px;
+
+    font-weight: 750;
+
+}
+
+.close {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0e7e8;
+
+    color: #70666a;
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.label {
+
+    display: block;
+
+    margin:
+        14px
+        0
+        6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #968b8f;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+.textarea {
+
+    width: 100%;
+
+    min-height: 100px;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        #e4dcde;
+
+    border-radius: 15px;
+
+    background: #fff;
+
+    resize: vertical;
+
+    outline: none;
+
+    font:
+        15px
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    color: #554d51;
+
+}
+
+.select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        #e4dcde;
+
+    border-radius: 15px;
+
+    background: #fff;
+
+    color: #554d51;
+
+    font-size: 15px;
+
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+.photo-preview {
+
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding:
+        5px
+        0
+        10px;
+
+}
+
+.photo-thumb {
+
+    width: 90px;
+
+    height: 90px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+}
+
+.photo-input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border:
+        1px dashed
+        #d8cbd0;
+
+    border-radius: 15px;
+
+    background: #fff;
+
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.save-button {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: #cfe5d9;
+
+    color: #4f6657;
+
+    font-size: 16px;
+
+    font-weight: 750;
+
+}
+
+.delete-button {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #f3dadd;
+
+    color: #925c65;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   DETAIL VIEW
+===================================================== */
+
+.detail-photo {
+
+    width: 100%;
+
+    max-height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-bottom: 14px;
+
+}
+
+.detail-title {
+
+    font-size: 29px;
+
+    font-weight: 750;
+
+    color: #554d51;
+
+}
+
+.detail-rating {
+
+    margin:
+        8px
+        0
+        15px;
+
+    color: #d49a58;
+
+    font-size: 17px;
+
+}
+
+.detail-section {
+
+    margin-top: 20px;
+
+}
+
+.detail-section h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #9a8f94;
+
+}
+
+.detail-text {
+
+    white-space: pre-wrap;
+
+    line-height: 1.55;
+
+    font-size: 15px;
+
+    color: #5e565a;
+
+}
+
+.detail-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+}
+
+.secondary-button {
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #eee5ea;
+
+    color: #665b60;
+
+    font-weight: 650;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty {
+
+    text-align: center;
+
+    padding: 65px 20px;
+
+    color: #a79ca0;
+
+}
+
+.empty-icon {
+
+    font-size: 48px;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: #a79ca0;
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 700px) {
+
+    .recipe-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .recipe-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 8px;
+
+    }
+
+    .recipe-title {
+
+        font-size: 14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<div
+    id="loginScreen"
+    class="login-screen">
+
+    <div class="login-card">
+
+        <div
+            class="header-icon">
+            🍝
+        </div>
+
+        <div class="login-title">
+            Our Recipe Book
+        </div>
+
+        <input
+            id="email"
+            class="input"
+            type="email"
+            placeholder="Email"
+            autocomplete="email">
+
+        <input
+            id="password"
+            class="input"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password">
+
+        <button
+            class="primary-button"
+            onclick="login()">
+
+            Log in
+
+        </button>
+
+        <div
+            id="loginError"
+            class="error">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN APP
+===================================================== -->
+
+<div
+    id="mainApp"
+    style="display:none;">
+
+<div class="app">
+
+<div class="container">
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="header-icon">
+        🍝
+    </div>
+
+    <h1 class="title">
+        Our Recipe Book
+    </h1>
+
+    <div class="subtitle">
+        GOOD FOOD • GOOD MEMORIES
+    </div>
+
+</div>
+
+
+<!-- SEARCH / SORT -->
+
+<div class="topbar">
+
+    <input
+        id="search"
+        class="search"
+        placeholder="🔍 Search recipes..."
+        oninput="renderRecipes()">
+
+    <select
+        id="sort"
+        class="sort"
+        onchange="renderRecipes()">
+
+        <option value="rating">
+            ⭐ Rating
+        </option>
+
+        <option value="name">
+            A → Z
+        </option>
+
+        <option value="nameDesc">
+            Z → A
+        </option>
+
+        <option value="newest">
+            Newest
+        </option>
+
+        <option value="oldest">
+            Oldest
+        </option>
+
+    </select>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div
+    id="filters"
+    class="filters">
+</div>
+
+
+<!-- RECIPES -->
+
+<div
+    id="recipeGrid"
+    class="recipe-grid">
+
+    <div class="loading">
+        Loading recipes...
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<button
+    class="floating-add"
+    onclick="openNewRecipe()">
+
+    +
+
+</button>
+
+</div>
+
+
+
+<!-- =====================================================
+     RECIPE EDIT MODAL
+===================================================== -->
+
+<div
+    id="editModal"
+    class="modal">
+
+<div class="modal-card">
+
+<div class="modal-header">
+
+    <div
+        id="editModalTitle"
+        class="modal-title">
+
+        New Recipe
+
+    </div>
+
+    <button
+        class="close"
+        onclick="closeEditModal()">
+
+        ×
+
+    </button>
+
+</div>
+
+
+<input
+    id="recipeTitle"
+    class="input"
+    placeholder="Recipe name">
+
+
+<div class="form-row">
+
+<div>
+
+<label class="label">
+Category
+</label>
+
+<select
+    id="recipeCategory"
+    class="select">
+
+    <option>🍝 Pasta</option>
+    <option>🥩 Meat</option>
+    <option>🥗 Healthy</option>
+    <option>🍳 Breakfast</option>
+    <option>🍰 Dessert</option>
+    <option>🥘 Other</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label class="label">
+Rating
+</label>
+
+<select
+    id="recipeRating"
+    class="select">
+
+    <option value="">
+        No rating
+    </option>
+
+    <option value="1">
+        ⭐ 1
+    </option>
+
+    <option value="2">
+        ⭐⭐ 2
+    </option>
+
+    <option value="3">
+        ⭐⭐⭐ 3
+    </option>
+
+    <option value="4">
+        ⭐⭐⭐⭐ 4
+    </option>
+
+    <option value="5">
+        ⭐⭐⭐⭐⭐ 5
+    </option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<label class="label">
+Ingredients
+</label>
+
+<textarea
+    id="recipeIngredients"
+    class="textarea"
+    placeholder="Write the ingredients here..."></textarea>
+
+
+<label class="label">
+Instructions
+</label>
+
+<textarea
+    id="recipeInstructions"
+    class="textarea"
+    placeholder="How do you make it?"></textarea>
+
+
+<label class="label">
+Our Notes
+</label>
+
+<textarea
+    id="recipeNotes"
+    class="textarea"
+    placeholder="What did we think? What should we change next time?"></textarea>
+
+
+<label class="label">
+Food Photos
+</label>
+
+<input
+    id="photoInput"
+    class="photo-input"
+    type="file"
+    accept="image/*"
+    multiple>
+
+
+<div
+    id="existingPhotos"
+    class="photo-preview">
+</div>
+
+
+<button
+    class="save-button"
+    onclick="saveRecipe()">
+
+    Save Recipe
+
+</button>
+
+
+<button
+    id="deleteRecipeButton"
+    class="delete-button"
+    onclick="deleteCurrentRecipe()"
+    style="display:none;">
+
+    Delete Recipe
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DETAIL MODAL
+===================================================== -->
+
+<div
+    id="detailModal"
+    class="modal">
+
+<div class="modal-card">
+
+<div class="modal-header">
+
+    <div class="modal-title">
+        Recipe
+    </div>
+
+    <button
+        class="close"
+        onclick="closeDetailModal()">
+
+        ×
+
+    </button>
+
+</div>
+
+
+<div
+    id="detailContent">
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+    "https://geshdseudikxkzukdxpm.supabase.co";
+
+
+const SUPABASE_KEY =
+    "sb_publishable_athr8mE5QfYz1pzJRZsf1w_zkEJOfwN";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+/* =====================================================
+   APP STATE
+===================================================== */
+
+let currentUser = null;
+
+let currentSpace = null;
+
+let recipes = [];
+
+let currentFilter = "All";
+
+let editingRecipeId = null;
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+async function login() {
+
+    const email =
+        document.getElementById(
+            "email"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+
+    const error =
+        document.getElementById(
+            "loginError"
+        );
+
+
+    error.textContent = "";
+
+
+    if (!email || !password) {
+
+        error.textContent =
+            "Please enter your email and password.";
+
+        return;
+
+    }
+
+
+    const {
+        data,
+        error: loginError
+    } =
+        await supabaseClient.auth.signInWithPassword({
+
+            email,
+            password
+
+        });
+
+
+    if (loginError) {
+
+        error.textContent =
+            loginError.message;
+
+        return;
+
+    }
+
+
+    currentUser =
+        data.user;
+
+
+    await startApp();
+
+}
+
+
+/* =====================================================
+   CHECK EXISTING SESSION
+===================================================== */
+
+async function checkSession() {
+
+    const {
+        data
+    } =
+        await supabaseClient.auth.getSession();
+
+
+    if (data.session) {
+
+        currentUser =
+            data.session.user;
+
+        await startApp();
+
+    }
+
+}
+
+
+/* =====================================================
+   START APP
+===================================================== */
+
+async function startApp() {
+
+    document.getElementById(
+        "loginScreen"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "mainApp"
+    ).style.display =
+        "block";
+
+
+    await loadSpace();
+
+    await loadRecipes();
+
+    setupRealtime();
+
+}
+
+
+/* =====================================================
+   FIND SHARED SPACE
+===================================================== */
+
+async function loadSpace() {
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("recipe_space_members")
+            .select("space_id")
+            .eq(
+                "user_id",
+                currentUser.id
+            );
+
+
+    if (error) {
+
+        alert(
+            "Could not find the shared recipe book:\n\n"
+            +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    if (!data || data.length === 0) {
+
+        alert(
+            "Your account is not connected to a recipe book yet."
+        );
+
+        return;
+
+    }
+
+
+    currentSpace =
+        data[0].space_id;
+
+}
+
+
+/* =====================================================
+   LOAD RECIPES
+===================================================== */
+
+async function loadRecipes() {
+
+    if (!currentSpace) return;
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("recipes")
+            .select("*")
+            .eq(
+                "space_id",
+                currentSpace
+            );
+
+
+    if (error) {
+
+        alert(
+            "Could not load recipes:\n\n"
+            +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    recipes =
+        data || [];
+
+
+    await attachPhotoUrls();
+
+
+    renderFilters();
+
+    renderRecipes();
+
+}
+
+
+/* =====================================================
+   PHOTO URLS
+===================================================== */
+
+async function attachPhotoUrls() {
+
+    for (
+        const recipe
+        of recipes
+    ) {
+
+
+        const {
+            data: photos
+        } =
+            await supabaseClient
+                .from("recipe_photos")
+                .select("*")
+                .eq(
+                    "recipe_id",
+                    recipe.id
+                )
+                .order(
+                    "created_at",
+                    {
+                        ascending: true
+                    }
+                );
+
+
+        recipe.photos =
+            [];
+
+
+        if (
+            photos
+            &&
+            photos.length
+        ) {
+
+
+            for (
+                const photo
+                of photos
+            ) {
+
+                const {
+                    data: signed
+                } =
+                    await supabaseClient
+                        .storage
+                        .from("recipe-photos")
+                        .createSignedUrl(
+                            photo.storage_path,
+                            3600
+                        );
+
+
+                if (
+                    signed
+                    &&
+                    signed.signedUrl
+                ) {
+
+                    recipe.photos.push(
+                        {
+                            ...photo,
+                            url:
+                                signed.signedUrl
+                        }
+                    );
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+function renderFilters() {
+
+    const container =
+        document.getElementById(
+            "filters"
+        );
+
+
+    const categories = [
+
+        "All",
+        "🍝 Pasta",
+        "🥩 Meat",
+        "🥗 Healthy",
+        "🍳 Breakfast",
+        "🍰 Dessert",
+        "🥘 Other"
+
+    ];
+
+
+    container.innerHTML = "";
+
+
+    categories.forEach(
+        category => {
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "filter";
+
+
+            if (
+                category ===
+                currentFilter
+            ) {
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            button.textContent =
+                category;
+
+
+            button.onclick =
+                function() {
+
+                    currentFilter =
+                        category;
+
+                    renderFilters();
+
+                    renderRecipes();
+
+                };
+
+
+            container.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   RENDER RECIPES
+===================================================== */
+
+function renderRecipes() {
+
+    const grid =
+        document.getElementById(
+            "recipeGrid"
+        );
+
+
+    const search =
+        document.getElementById(
+            "search"
+        ).value
+        .trim()
+        .toLowerCase();
+
+
+    const sort =
+        document.getElementById(
+            "sort"
+        ).value;
+
+
+    let filtered =
+        recipes.filter(
+            recipe => {
+
+
+                const matchesSearch =
+
+                    recipe.title
+                        .toLowerCase()
+                        .includes(search);
+
+
+                const matchesCategory =
+
+                    currentFilter ===
+                    "All"
+                    ||
+                    recipe.category ===
+                    currentFilter;
+
+
+                return (
+                    matchesSearch
+                    &&
+                    matchesCategory
+                );
+
+            }
+        );
+
+
+    /* SORT */
+
+    filtered.sort(
+        (a, b) => {
+
+
+            if (
+                sort ===
+                "name"
+            ) {
+
+                return a.title
+                    .localeCompare(
+                        b.title
+                    );
+
+            }
+
+
+            if (
+                sort ===
+                "nameDesc"
+            ) {
+
+                return b.title
+                    .localeCompare(
+                        a.title
+                    );
+
+            }
+
+
+            if (
+                sort ===
+                "newest"
+            ) {
+
+                return new Date(
+                    b.created_at
+                )
+                -
+                new Date(
+                    a.created_at
+                );
+
+            }
+
+
+            if (
+                sort ===
+                "oldest"
+            ) {
+
+                return new Date(
+                    a.created_at
+                )
+                -
+                new Date(
+                    b.created_at
+                );
+
+            }
+
+
+            return (
+                Number(
+                    b.rating || 0
+                )
+                -
+                Number(
+                    a.rating || 0
+                )
+            );
+
+        }
+    );
+
+
+    grid.innerHTML = "";
+
+
+    if (
+        filtered.length ===
+        0
+    ) {
+
+        grid.innerHTML = `
+
+            <div
+                class="empty"
+                style="grid-column:1/-1;">
+
+                <div class="empty-icon">
+                    🍳
+                </div>
+
+                <div>
+                    No recipes found.
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    filtered.forEach(
+        recipe => {
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "recipe-card";
+
+
+            const photo =
+                recipe.photos
+                &&
+                recipe.photos.length
+                    ? recipe.photos[0].url
+                    : null;
+
+
+            const stars =
+                recipe.rating
+                    ? "⭐".repeat(
+                        Math.round(
+                            recipe.rating
+                        )
+                    )
+                    : "No rating";
+
+
+            card.innerHTML = `
+
+                ${
+                    photo
+
+                    ?
+
+                    `<img
+                        class="recipe-image"
+                        src="${photo}"
+                        alt="">`
+
+                    :
+
+                    `<div class="no-image">
+                        🍽️
+                    </div>`
+                }
+
+
+                <div class="recipe-info">
+
+                    <div class="recipe-title">
+
+                        ${escapeHtml(
+                            recipe.title
+                        )}
+
+                    </div>
+
+
+                    <div class="recipe-category">
+
+                        ${escapeHtml(
+                            recipe.category
+                        )}
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ${stars}
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            card.onclick =
+                function() {
+
+                    openRecipe(
+                        recipe.id
+                    );
+
+                };
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   NEW RECIPE
+===================================================== */
+
+function openNewRecipe() {
+
+    editingRecipeId =
+        null;
+
+
+    document.getElementById(
+        "editModalTitle"
+    ).textContent =
+        "New Recipe";
+
+
+    document.getElementById(
+        "recipeTitle"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "recipeCategory"
+    ).value =
+        "🥘 Other";
+
+
+    document.getElementById(
+        "recipeRating"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "recipeIngredients"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "recipeInstructions"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "recipeNotes"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "photoInput"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "existingPhotos"
+    ).innerHTML =
+        "";
+
+
+    document.getElementById(
+        "deleteRecipeButton"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "editModal"
+    ).classList.add(
+        "visible"
+    );
+
+}
+
+
+/* =====================================================
+   EDIT RECIPE
+===================================================== */
+
+function editRecipe(id) {
+
+    const recipe =
+        recipes.find(
+            r =>
+                r.id === id
+        );
+
+
+    if (!recipe) return;
+
+
+    editingRecipeId =
+        id;
+
+
+    document.getElementById(
+        "editModalTitle"
+    ).textContent =
+        "Edit Recipe";
+
+
+    document.getElementById(
+        "recipeTitle"
+    ).value =
+        recipe.title;
+
+
+    document.getElementById(
+        "recipeCategory"
+    ).value =
+        recipe.category;
+
+
+    document.getElementById(
+        "recipeRating"
+    ).value =
+        recipe.rating || "";
+
+
+    document.getElementById(
+        "recipeIngredients"
+    ).value =
+        recipe.ingredients || "";
+
+
+    document.getElementById(
+        "recipeInstructions"
+    ).value =
+        recipe.instructions || "";
+
+
+    document.getElementById(
+        "recipeNotes"
+    ).value =
+        recipe.notes || "";
+
+
+    document.getElementById(
+        "photoInput"
+    ).value =
+        "";
+
+
+    renderExistingPhotos(
+        recipe
+    );
+
+
+    document.getElementById(
+        "deleteRecipeButton"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "editModal"
+    ).classList.add(
+        "visible"
+    );
+
+}
+
+
+/* =====================================================
+   EXISTING PHOTOS
+===================================================== */
+
+function renderExistingPhotos(
+    recipe
+) {
+
+    const container =
+        document.getElementById(
+            "existingPhotos"
+        );
+
+
+    container.innerHTML = "";
+
+
+    if (
+        !recipe.photos
+        ||
+        !recipe.photos.length
+    ) {
+
+        return;
+
+    }
+
+
+    recipe.photos.forEach(
+        photo => {
+
+
+            const img =
+                document.createElement(
+                    "img"
+                );
+
+
+            img.className =
+                "photo-thumb";
+
+
+            img.src =
+                photo.url;
+
+
+            container.appendChild(
+                img
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   SAVE RECIPE
+===================================================== */
+
+async function saveRecipe() {
+
+    const title =
+        document.getElementById(
+            "recipeTitle"
+        ).value.trim();
+
+
+    if (!title) {
+
+        alert(
+            "Please enter a recipe name."
+        );
+
+        return;
+
+    }
+
+
+    const recipeData = {
+
+        title,
+
+        ingredients:
+            document.getElementById(
+                "recipeIngredients"
+            ).value,
+
+        instructions:
+            document.getElementById(
+                "recipeInstructions"
+            ).value,
+
+        notes:
+            document.getElementById(
+                "recipeNotes"
+            ).value,
+
+        rating:
+            document.getElementById(
+                "recipeRating"
+            ).value
+                ?
+
+                Number(
+                    document.getElementById(
+                        "recipeRating"
+                    ).value
+                )
+
+                :
+
+                null,
+
+        category:
+            document.getElementById(
+                "recipeCategory"
+            ).value,
+
+        updated_by:
+            currentUser.id,
+
+        updated_at:
+            new Date().toISOString()
+
+    };
+
+
+    let recipeId;
+
+
+    /* =========================================
+       UPDATE
+    ========================================= */
+
+    if (
+        editingRecipeId
+    ) {
+
+
+        const {
+            error
+        } =
+            await supabaseClient
+                .from("recipes")
+                .update(
+                    recipeData
+                )
+                .eq(
+                    "id",
+                    editingRecipeId
+                );
+
+
+        if (error) {
+
+            alert(
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        recipeId =
+            editingRecipeId;
+
+
+    }
+
+
+    /* =========================================
+       CREATE
+    ========================================= */
+
+    else {
+
+
+        recipeData.space_id =
+            currentSpace;
+
+
+        recipeData.created_by =
+            currentUser.id;
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+                .from("recipes")
+                .insert(
+                    recipeData
+                )
+                .select()
+                .single();
+
+
+        if (error) {
+
+            alert(
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        recipeId =
+            data.id;
+
+    }
+
+
+    /* =========================================
+       UPLOAD PHOTOS
+    ========================================= */
+
+    const files =
+        document.getElementById(
+            "photoInput"
+        ).files;
+
+
+    if (
+        files
+        &&
+        files.length
+    ) {
+
+
+        for (
+            const file
+            of files
+        ) {
+
+
+            const safeName =
+                file.name
+                    .replace(
+                        /[^a-zA-Z0-9._-]/g,
+                        "_"
+                    );
+
+
+            const path =
+
+                currentSpace
+                +
+                "/"
+                +
+                recipeId
+                +
+                "/"
+                +
+                Date.now()
+                +
+                "_"
+                +
+                safeName;
+
+
+            const {
+                error: uploadError
+            } =
+                await supabaseClient
+                    .storage
+                    .from(
+                        "recipe-photos"
+                    )
+                    .upload(
+                        path,
+                        file,
+                        {
+                            upsert: false
+                        }
+                    );
+
+
+            if (
+                uploadError
+            ) {
+
+                alert(
+                    "Recipe saved, but a photo could not be uploaded:\n\n"
+                    +
+                    uploadError.message
+                );
+
+                continue;
+
+            }
+
+
+            const {
+                error: photoError
+            } =
+                await supabaseClient
+                    .from(
+                        "recipe_photos"
+                    )
+                    .insert({
+
+                        recipe_id:
+                            recipeId,
+
+                        space_id:
+                            currentSpace,
+
+                        storage_path:
+                            path,
+
+                        created_by:
+                            currentUser.id
+
+                    });
+
+
+            if (
+                photoError
+            ) {
+
+                alert(
+                    "Photo uploaded but could not be registered:\n\n"
+                    +
+                    photoError.message
+                );
+
+            }
+
+        }
+
+    }
+
+
+    closeEditModal();
+
+
+    await loadRecipes();
+
+}
+
+
+/* =====================================================
+   DELETE RECIPE
+===================================================== */
+
+async function deleteCurrentRecipe() {
+
+    if (
+        !editingRecipeId
+    ) return;
+
+
+    const recipe =
+        recipes.find(
+            r =>
+                r.id ===
+                editingRecipeId
+        );
+
+
+    if (!recipe) return;
+
+
+    const confirmed =
+        confirm(
+            "Delete this recipe?"
+        );
+
+
+    if (!confirmed) return;
+
+
+    /*
+     * Delete storage photos first.
+     */
+
+    if (
+        recipe.photos
+        &&
+        recipe.photos.length
+    ) {
+
+
+        const paths =
+            recipe.photos.map(
+                photo =>
+                    photo.storage_path
+            );
+
+
+        await supabaseClient
+            .storage
+            .from(
+                "recipe-photos"
+            )
+            .remove(
+                paths
+            );
+
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("recipes")
+            .delete()
+            .eq(
+                "id",
+                editingRecipeId
+            );
+
+
+    if (error) {
+
+        alert(
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    closeEditModal();
+
+
+    await loadRecipes();
+
+}
+
+
+/* =====================================================
+   OPEN RECIPE
+===================================================== */
+
+function openRecipe(id) {
+
+    const recipe =
+        recipes.find(
+            r =>
+                r.id === id
+        );
+
+
+    if (!recipe) return;
+
+
+    const stars =
+        recipe.rating
+            ? "⭐".repeat(
+                Math.round(
+                    recipe.rating
+                )
+            )
+            : "No rating";
+
+
+    let photosHTML = "";
+
+
+    if (
+        recipe.photos
+        &&
+        recipe.photos.length
+    ) {
+
+
+        photosHTML =
+            recipe.photos
+                .map(
+                    photo => `
+
+                        <img
+                            class="detail-photo"
+                            src="${photo.url}"
+                            alt="">
+
+                    `
+                )
+                .join("");
+
+    }
+
+
+    document.getElementById(
+        "detailContent"
+    ).innerHTML = `
+
+        ${photosHTML}
+
+
+        <div class="detail-title">
+
+            ${escapeHtml(
+                recipe.title
+            )}
+
+        </div>
+
+
+        <div class="detail-rating">
+
+            ${stars}
+
+            &nbsp;
+
+            ${escapeHtml(
+                recipe.category
+            )}
+
+        </div>
+
+
+        <div class="detail-section">
+
+            <h3>
+                Ingredients
+            </h3>
+
+            <div class="detail-text">
+
+                ${escapeHtml(
+                    recipe.ingredients
+                    ||
+                    "No ingredients added."
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-section">
+
+            <h3>
+                Instructions
+            </h3>
+
+            <div class="detail-text">
+
+                ${escapeHtml(
+                    recipe.instructions
+                    ||
+                    "No instructions added."
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-section">
+
+            <h3>
+                Our Notes
+            </h3>
+
+            <div class="detail-text">
+
+                ${escapeHtml(
+                    recipe.notes
+                    ||
+                    "No notes yet."
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-actions">
+
+            <button
+                class="secondary-button"
+                onclick="editRecipe('${recipe.id}')">
+
+                ✏️ Edit
+
+            </button>
+
+
+            <button
+                class="secondary-button"
+                onclick="closeDetailModal()">
+
+                Done
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "detailModal"
+    ).classList.add(
+        "visible"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE MODALS
+===================================================== */
+
+function closeEditModal() {
+
+    document.getElementById(
+        "editModal"
+    ).classList.remove(
+        "visible"
+    );
+
+}
+
+
+function closeDetailModal() {
+
+    document.getElementById(
+        "detailModal"
+    ).classList.remove(
+        "visible"
+    );
+
+}
+
+
+/* =====================================================
+   REALTIME
+===================================================== */
+
+function setupRealtime() {
+
+    if (!currentSpace) return;
+
+
+    supabaseClient
+        .channel(
+            "recipe-book-live"
+        )
+        .on(
+            "postgres_changes",
+            {
+                event: "*",
+                schema: "public",
+                table: "recipes",
+                filter:
+                    "space_id=eq."
+                    +
+                    currentSpace
+            },
+            async function() {
+
+                await loadRecipes();
+
+            }
+        )
+        .on(
+            "postgres_changes",
+            {
+                event: "*",
+                schema: "public",
+                table: "recipe_photos",
+                filter:
+                    "space_id=eq."
+                    +
+                    currentSpace
+            },
+            async function() {
+
+                await loadRecipes();
+
+            }
+        )
+        .subscribe();
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+checkSession();
+
+</script>
+
+
+</body>
+
+</html>
