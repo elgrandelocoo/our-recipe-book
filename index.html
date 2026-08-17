@@ -3410,13 +3410,239 @@ function escapeHtml(
 
 
 /* =====================================================
+   REFRESH BUTTON + APP RESUME REFRESH
+===================================================== */
+
+function setupRefreshButton() {
+
+    const topbar =
+        document.querySelector(".topbar");
+
+    if (!topbar) return;
+
+    /* Prevent duplicate button */
+
+    if (
+        document.getElementById(
+            "refreshButton"
+        )
+    ) {
+        return;
+    }
+
+
+    const button =
+        document.createElement("button");
+
+
+    button.id =
+        "refreshButton";
+
+
+    button.type =
+        "button";
+
+
+    button.title =
+        "Refresh recipes";
+
+
+    button.setAttribute(
+        "aria-label",
+        "Refresh recipes"
+    );
+
+
+    button.innerHTML =
+        "↻";
+
+
+    /* Button styling */
+
+    button.style.width =
+        "45px";
+
+    button.style.height =
+        "45px";
+
+    button.style.flexShrink =
+        "0";
+
+    button.style.border =
+        "1px solid #e6dfe0";
+
+    button.style.borderRadius =
+        "15px";
+
+    button.style.background =
+        "rgba(255,255,255,0.75)";
+
+    button.style.color =
+        "#776b70";
+
+    button.style.fontSize =
+        "23px";
+
+    button.style.display =
+        "flex";
+
+    button.style.alignItems =
+        "center";
+
+    button.style.justifyContent =
+        "center";
+
+    button.style.cursor =
+        "pointer";
+
+    button.style.transition =
+        "transform 0.2s ease, background 0.2s ease";
+
+
+    /* Refresh action */
+
+    button.addEventListener(
+        "click",
+        async function() {
+
+            button.style.transform =
+                "rotate(360deg)";
+
+            button.style.background =
+                "#f1e5eb";
+
+            button.disabled =
+                true;
+
+
+            try {
+
+                await loadRecipes();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Refresh failed:",
+                    error
+                );
+
+            }
+
+
+            setTimeout(
+                function() {
+
+                    button.style.transform =
+                        "";
+
+                    button.style.background =
+                        "rgba(255,255,255,0.75)";
+
+                    button.disabled =
+                        false;
+
+                },
+                500
+            );
+
+        }
+    );
+
+
+    /* Put refresh button between search and sort */
+
+    const sort =
+        document.getElementById(
+            "sort"
+        );
+
+
+    if (sort) {
+
+        topbar.insertBefore(
+            button,
+            sort
+        );
+
+    }
+
+    else {
+
+        topbar.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTOMATIC REFRESH WHEN APP BECOMES ACTIVE
+===================================================== */
+
+let lastResumeRefresh =
+    0;
+
+
+document.addEventListener(
+    "visibilitychange",
+    async function() {
+
+        if (
+            document.visibilityState !==
+            "visible"
+        ) {
+            return;
+        }
+
+
+        if (
+            !currentUser ||
+            !currentSpace
+        ) {
+            return;
+        }
+
+
+        /* Don't refresh repeatedly */
+
+        const now =
+            Date.now();
+
+
+        if (
+            now -
+            lastResumeRefresh
+            <
+            3000
+        ) {
+            return;
+        }
+
+
+        lastResumeRefresh =
+            now;
+
+
+        await loadRecipes();
+
+    }
+);
+
+
+/* =====================================================
    START
 ===================================================== */
 
 checkSession();
 
-</script>
 
-</body>
+/* Create refresh button after page is ready */
 
-</html>
+setTimeout(
+    setupRefreshButton,
+    300
+);
